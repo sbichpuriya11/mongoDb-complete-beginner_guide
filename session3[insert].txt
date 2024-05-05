@@ -1,0 +1,47 @@
+session1_db> show dbs
+admin         40.00 KiB
+config       108.00 KiB
+local         72.00 KiB
+session1_db   72.00 KiB
+session1_db> use school
+switched to db school
+school> show dbs
+admin         40.00 KiB
+config       108.00 KiB
+local         72.00 KiB
+session1_db   72.00 KiB
+school> show collections
+
+school> db.students.insert({name:"Ram", "age":12}) //keys can be wrote inside "" or without ""
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662bfe0a16c86bf2d246b7ad') }
+}
+school> db.students.find()
+[ { _id: ObjectId('662bfe0a16c86bf2d246b7ad'), name: 'Ram', age: 12 } ]
+school> db.students.insertOne({name:"Ankit",age:13})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bfe6616c86bf2d246b7ae')
+}
+school> db.students.insertMany([{name:"Vijay",age:23},{name:"Nitin", age:34},{'name':'Sagar',age:24},{"name":"Tanu",'age':21}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('662bfee116c86bf2d246b7af'),
+    '1': ObjectId('662bfee116c86bf2d246b7b0'),
+    '2': ObjectId('662bfee116c86bf2d246b7b1'),
+    '3': ObjectId('662bfee116c86bf2d246b7b2')
+  }
+}
+school> db.students.find()
+[
+  { _id: ObjectId('662bfe0a16c86bf2d246b7ad'), name: 'Ram', age: 12 },
+  { _id: ObjectId('662bfe6616c86bf2d246b7ae'), name: 'Ankit', age: 13 },
+  { _id: ObjectId('662bfee116c86bf2d246b7af'), name: 'Vijay', age: 23 },
+  { _id: ObjectId('662bfee116c86bf2d246b7b0'), name: 'Nitin', age: 34 },
+  { _id: ObjectId('662bfee116c86bf2d246b7b1'), name: 'Sagar', age: 24 },
+  { _id: ObjectId('662bfee116c86bf2d246b7b2'), name: 'Tanu', age: 21 }
+]
+school>

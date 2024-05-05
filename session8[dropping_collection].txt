@@ -1,0 +1,65 @@
+session1_db> db.companyData.insertOne({name:"Amazon",isFunded:true,funding:1900000012786767867123, employees:[{name:"Vipul", age:55},{name:"Somesh", age:39},{name:"Ganesh",age:43}], foundedOn: new Date(), foundedOnTimeStamp:new Timestamp()})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662c0ccbbc4e4460df46b7af')
+}
+session1_db> db.compantData.find()
+
+session1_db> db.companyData.find()
+[
+  {
+    _id: ObjectId('662c0ccbbc4e4460df46b7af'),
+    name: 'Amazon',
+    isFunded: true,
+    funding: 1.9000000127867678e+21,
+    employees: [
+      { name: 'Vipul', age: 55 },
+      { name: 'Somesh', age: 39 },
+      { name: 'Ganesh', age: 43 }
+    ],
+    foundedOn: ISODate('2024-04-26T20:21:31.745Z'),
+    foundedOnTimeStamp: Timestamp({ t: 1714162891, i: 1 })
+  }
+]
+session1_db> show databases
+admin         40.00 KiB
+config       108.00 KiB
+local         72.00 KiB
+school        72.00 KiB
+session1_db  112.00 KiB
+session1_db> use mydb
+switched to db mydb
+mydb> db.products.insert({name:'laptop',price:200000})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c0dd7bc4e4460df46b7b0') }
+}
+mydb> use mydb
+already on db mydb
+mydb> show collections
+products
+mydb> db.dropDatabase()
+{ ok: 1, dropped: 'mydb' }
+mydb> show collections
+
+mydb> db.products.insert({name:'laptop',price:200000})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c0e10bc4e4460df46b7b1') }
+}
+mydb> show collections
+products
+mydb> db.products_new.insert({name:'laptop',price:200000})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c0e30bc4e4460df46b7b2') }
+}
+mydb> show collections
+products
+products_new
+mydb> db.products_new.drop()
+true
+mydb> show collections
+products
+mydb>

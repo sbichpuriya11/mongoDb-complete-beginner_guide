@@ -1,0 +1,7 @@
+1. `use college`: Switches to the `college` database.
+2. `db.students.insertOne({...})`: Inserts a single document into the `students` collection.
+3. `db.students.insertMany([...])`: Inserts multiple documents into the `students` collection.
+4. `show dbs`: Displays a list of databases and their sizes.
+5. `db.students.find().pretty()`: Finds all documents in the `students` collection and displays them in a formatted manner.
+
+These commands are typical MongoDB commands used for database manipulation, data insertion, and querying. Let me know if you need further explanation on any specific command!

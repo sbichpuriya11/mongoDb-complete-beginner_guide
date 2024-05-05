@@ -1,0 +1,332 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb://localhost:27017
+mongodb://localhost:27017
+Current Mongosh Log ID: 6633b695589efcd7db46b798
+Connecting to:          mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.5
+Using MongoDB:          7.0.8
+Using Mongosh:          2.2.5
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-04-28T23:08:50.451+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin     40.00 KiB
+college   72.00 KiB
+config   108.00 KiB
+local     72.00 KiB
+school    80.00 KiB
+test> use college
+switched to db college
+college> db.students.findOne()
+{
+  _id: ObjectId('6633b114fd8c83393e46b799'),
+  name: 'John Doe',
+  age: 20,
+  major: 'Computer Science',
+  year: 2,
+  courses: [
+    'Introduction to Programming',
+    'Database Management',
+    'Data Structures'
+  ],
+  gpa: 3.8
+}
+college> db.students.findOne({name:"John Doe"},{gpa:3.9})
+{ _id: ObjectId('6633b114fd8c83393e46b799'), gpa: 3.8 }
+college> db.students.findOne()
+{
+  _id: ObjectId('6633b114fd8c83393e46b799'),
+  name: 'John Doe',
+  age: 20,
+  major: 'Computer Science',
+  year: 2,
+  courses: [
+    'Introduction to Programming',
+    'Database Management',
+    'Data Structures'
+  ],
+  gpa: 3.8
+}
+college> db.students.updateOne({name:"John Doe"},{gpa:3.9})
+MongoInvalidArgumentError: Update document requires atomic operators
+college> db.students.updateOne({name:"John Doe"},{$set:{gpa:3.9}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+college> db.students.findOne({name:"John Doe"})
+{
+  _id: ObjectId('6633b114fd8c83393e46b799'),
+  name: 'John Doe',
+  age: 20,
+  major: 'Computer Science',
+  year: 2,
+  courses: [
+    'Introduction to Programming',
+    'Database Management',
+    'Data Structures'
+  ],
+  gpa: 3.9
+}
+college> db.students.updateMany({gpa:3.9},{$set:{result:"Failed"}}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:57)
+
+> 1 | db.students.updateMany({gpa:3.9},{$set:{result:"Failed"}}})
+    |                                                          ^
+  2 |
+
+college> db.students.updateMany({gpa:3.9},{$set:{result:"Failed"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+college> db.students.findMany({gpa:3.9})
+TypeError: db.students.findMany is not a function
+college> db.students.find({gpa:3.9})
+[
+  {
+    _id: ObjectId('6633b114fd8c83393e46b799'),
+    name: 'John Doe',
+    age: 20,
+    major: 'Computer Science',
+    year: 2,
+    courses: [
+      'Introduction to Programming',
+      'Database Management',
+      'Data Structures'
+    ],
+    gpa: 3.9,
+    result: 'Failed'
+  },
+  {
+    _id: ObjectId('6633b174fd8c83393e46b79c'),
+    name: 'Emily Brown',
+    age: 20,
+    major: 'Psychology',
+    year: 2,
+    courses: [
+      'Introduction to Psychology',
+      'Cognitive Psychology',
+      'Abnormal Psychology'
+    ],
+    gpa: 3.9,
+    hometown: 'Los Angeles',
+    gender: 'Female',
+    result: 'Failed'
+  },
+  {
+    _id: ObjectId('6633b174fd8c83393e46b7a1'),
+    name: 'Daniel Kim',
+    age: 21,
+    major: 'Computer Science',
+    year: 3,
+    courses: [ 'Data Structures', 'Algorithms', 'Operating Systems' ],
+    gpa: 3.9,
+    hometown: 'Seattle',
+    gender: 'Male',
+    result: 'Failed'
+  }
+]
+college> db.students.updateOne({name:"John Doe"},{$set:{attempt:1, age:23}})
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+college> db.students.find({name:"John Doe"})
+[
+  {
+    _id: ObjectId('6633b114fd8c83393e46b799'),
+    name: 'John Doe',
+    age: 23,
+    major: 'Computer Science',
+    year: 2,
+    courses: [
+      'Introduction to Programming',
+      'Database Management',
+      'Data Structures'
+    ],
+    gpa: 3.9,
+    result: 'Failed',
+    attempt: 1
+  }
+]
+college> db.students.find({gpa:3.9})
+[
+  {
+    _id: ObjectId('6633b114fd8c83393e46b799'),
+    name: 'John Doe',
+    age: 23,
+    major: 'Computer Science',
+    year: 2,
+    courses: [
+      'Introduction to Programming',
+      'Database Management',
+      'Data Structures'
+    ],
+    gpa: 3.9,
+    result: 'Failed',
+    attempt: 1
+  },
+  {
+    _id: ObjectId('6633b174fd8c83393e46b79c'),
+    name: 'Emily Brown',
+    age: 20,
+    major: 'Psychology',
+    year: 2,
+    courses: [
+      'Introduction to Psychology',
+      'Cognitive Psychology',
+      'Abnormal Psychology'
+    ],
+    gpa: 3.9,
+    hometown: 'Los Angeles',
+    gender: 'Female',
+    result: 'Failed'
+  },
+  {
+    _id: ObjectId('6633b174fd8c83393e46b7a1'),
+    name: 'Daniel Kim',
+    age: 21,
+    major: 'Computer Science',
+    year: 3,
+    courses: [ 'Data Structures', 'Algorithms', 'Operating Systems' ],
+    gpa: 3.9,
+    hometown: 'Seattle',
+    gender: 'Male',
+    result: 'Failed'
+  }
+college> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & Promoted',atPlease enter a MongoDB connection stricollege> db.students.udpate({gcollege> db.students.udpate(college> db.students.udpate({gpa:college> db.students.udcollege> db.students.college> db.students.udpate({gpa:3.9},{$set:{result:'Exemcollege> db.students.udpate({gpa:3.9college> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & Promoted',attempt:}})
+college> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & Promoted',attempt:}})
+college> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & Promoted',attempt:}})
+college> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & Promoted',attempt:}})
+college> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & Promoted',atcollegecollege> db.students.udpate({gpcollege> db.studecollege> db.students.udpate({gpa:3.9},{$set:{result:college> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & Promoted',attempt:}})
+college> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & Promoted',attempt:}})
+college> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & Promoted',attempt:}})
+college> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & PPlease enter a MongoDB connection string (Default: mongodb://locacollege> db.students.udpate({gpa:3.9},{$set:{result:'Exempted & Promoted',attempt:3}})
+TypeError: db.students.udpate is not a function
+college> db.students.update({gpa:3.9},{$set:{result:'Exempted & Promoted',attempt:3}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+college> db.students.find({gpa:3.9})
+[
+  {
+    _id: ObjectId('6633b114fd8c83393e46b799'),
+    name: 'John Doe',
+    age: 23,
+    major: 'Computer Science',
+    year: 2,
+    courses: [
+      'Introduction to Programming',
+      'Database Management',
+      'Data Structures'
+    ],
+    gpa: 3.9,
+    result: 'Exempted & Promoted',
+    attempt: 3
+  },
+  {
+    _id: ObjectId('6633b174fd8c83393e46b79c'),
+    name: 'Emily Brown',
+    age: 20,
+    major: 'Psychology',
+    year: 2,
+    courses: [
+      'Introduction to Psychology',
+      'Cognitive Psychology',
+      'Abnormal Psychology'
+    ],
+    gpa: 3.9,
+    hometown: 'Los Angeles',
+    gender: 'Female',
+    result: 'Failed'
+  },
+  {
+    _id: ObjectId('6633b174fd8c83393e46b7a1'),
+    name: 'Daniel Kim',
+    age: 21,
+    major: 'Computer Science',
+    year: 3,
+    courses: [ 'Data Structures', 'Algorithms', 'Operating Systems' ],
+    gpa: 3.9,
+    hometown: 'Seattle',
+    gender: 'Male',
+    result: 'Failed'
+  }
+]
+college> db.students.updateMany({gpa:3.9},{$set:{result:'Exempted & Promoted',attempt:3}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+college> db.students.find({gpa:3.9})
+[
+  {
+    _id: ObjectId('6633b114fd8c83393e46b799'),
+    name: 'John Doe',
+    age: 23,
+    major: 'Computer Science',
+    year: 2,
+    courses: [
+      'Introduction to Programming',
+      'Database Management',
+      'Data Structures'
+    ],
+    gpa: 3.9,
+    result: 'Exempted & Promoted',
+    attempt: 3
+  },
+  {
+    _id: ObjectId('6633b174fd8c83393e46b79c'),
+    name: 'Emily Brown',
+    age: 20,
+    major: 'Psychology',
+    year: 2,
+    courses: [
+      'Introduction to Psychology',
+      'Cognitive Psychology',
+      'Abnormal Psychology'
+    ],
+    gpa: 3.9,
+    hometown: 'Los Angeles',
+    gender: 'Female',
+    result: 'Exempted & Promoted',
+    attempt: 3
+  },
+  {
+    _id: ObjectId('6633b174fd8c83393e46b7a1'),
+    name: 'Daniel Kim',
+    age: 21,
+    major: 'Computer Science',
+    year: 3,
+    courses: [ 'Data Structures', 'Algorithms', 'Operating Systems' ],
+    gpa: 3.9,
+    hometown: 'Seattle',
+    gender: 'Male',
+    result: 'Exempted & Promoted',
+    attempt: 3
+  }
+]
+college>

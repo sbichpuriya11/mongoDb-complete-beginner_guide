@@ -1,0 +1,418 @@
+Reference Link to Problem Set: https://www.w3resource.com/mongodb-exercises/
+
+
+exercise> //1. Write a MongoDB query to display all the documents in the collection restaurants.
+exercise> db.restaurants.find()
+
+
+exercise> //2. Write a MongoDB query to display the fields restaurant_id, name, borough and cuisine for all the documents in the collection restaurant.
+exercise> db.restaurants.find({},{restaurant_id:1,name:1, borought:1, cuisine:1, _id:0})
+exercise> db.restaurants.find({},{restaurant_id:1,name:1, borough:1, cuisine:1, _id:0})
+
+
+exercise> //3. Write a MongoDB query to display the fields restaurant_id, name, borough and cuisine, but exclude the field _id for all the documents in the collection restaurant.
+exercise> db.restaurants.find({},{restaurant_id:1,name:1, borough:1, cuisine:1, _id:1})
+
+
+exercise > //4. Write a MongoDB query to display the fields restaurant_id, name, borough and zip code, but exclude the field _id for all the documents in the collection restaurant.
+exercise> db.restaurants.find({},{restaurant_id:1,name:1, borough:1, zipcode:1, _id:1})
+exercise> db.restaurants.find({},{restaurant_id:1,name:1, borough:1, zipcode:1, _id:0})
+exercise> db.restaurants.find({},{restaurant_id:1,name:1, borough:1, "address.zipcode":1, _id:0})
+
+
+exercise > //5. Write a MongoDB query to display all the restaurant which is in the borough Bronx.
+exercise> db.restaurants.find({borough:"Bronx"})
+
+
+exercise > //6. Write a MongoDB query to display the first 5 restaurant which is in the borough Bronx.
+exercise> db.restaurants.find({borough:"Bronx"}).limit(5)
+
+
+exercise > //7.Write a MongoDB query to display the next 5 restaurants after skipping first 5 which are in the borough Bronx.
+exercise> db.restaurants.find({borough:"Bronx"}).limit(5).skip(5)
+
+
+exercise > //8. Write a MongoDB query to find the restaurants who achieved a score more than 90.
+exercise> db.restaurants.find({score:{$gt:90}})
+exercise> db.restaurants.find({"grades.score":{$gt:90}})
+
+
+exercise > //9. Write a MongoDB query to find the restaurants that achieved a score, more than 80 but less than 100.
+exercise> db.restaurants.find({"grades.score":{$gt:80, $lt:100}})
+
+
+exercise> //10. Write a MongoDB query to find the restaurants which locate in latitude value less than -95.754168.
+exercise> db.restaurants.find({"adress.coord$[0]":{$lt:-95.754168}})
+exercise> db.restaurants.find({"adress.coord.0":{$lt:-95.754168}})
+exercise> db.restaurants.find({"address.coord.0":{$lt:-95.754168}})
+
+
+exercise> //11. Write a MongoDB query to find the restaurants that do not prepare any cuisine of 'American' and their grade score more than 70 and latitude less than -65.754168.
+exercise> db.restaurants.find({cuisine:{$ne:'American '},"grades.score":{$gt:70},"address.coord.0":{$lt:-65.754168}})
+
+
+exercise> //12. Write a MongoDB query to find the restaurants which do not prepare any cuisine of 'American' and achieved a score more than 70 and located in the longitude less than -65.754168.
+exercise> db.restaurants.find({$and: [{cuisine: { $ne: 'American ' }, "grades.score": { $gt: 70 }, "address.coord.0": {$lt: -65.754168}}]})
+
+
+exercise > //13. Write a MongoDB query to find the restaurants which do not prepare any cuisine of 'American' and achieved a grade point 'A'
+not belongs to the borough Brooklyn. The document must be displayed according to the cuisine in descending order.
+exercise> db.restaurants.find({cuisine:{$ne:'American '},"grades.grade":"A",borough:"Brooklyn"}).sort({cuisine:1})
+exercise> db.restaurants.find({cuisine:{$ne:'American '},"grades.grade":"A",borough:"Brooklyn"}).sort({cuisine:-1})
+
+
+exercise> //14. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which contain 'Wil' as first three letters for its name.
+exercise> db.restaurants.find({name:{$regex:/^Wil/}},{restaurant_id:1,borough:1, cuisine:1, name:1})
+
+
+exercise> //15. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which contain 'ces' as last three letters for its name.
+exercise> db.restaurants.find({name:{$regex:/ces$/}},{restaurant_id:1,borough:1, cuisine:1, name:1})
+
+
+exercise> //16. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which contain 'Reg' as three letters somewhere in its name.
+exercise> db.restaurants.find({name:{$regex:/.*Reg.*/}},{restaurant_id:1, name:1,borough:1, cuisine:1})
+
+
+exercise> //17. Write a MongoDB query to find the restaurants which belong to the borough Bronx and prepared either American or Chinese dish.
+exercise> db.restaurants.find({borough:'Bronx',cuisine:{$in:['American','Chinese']}})
+
+
+exercise> //18. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which belong to the borough
+ Staten Island or Queens or Bronxor Brooklyn.
+exercise> db.restaurants.find({borough:{$in:['Staten Island','Queens','Brooklyn']}},{restaurant_id:1, name:1, borough:1, cuisine:1})
+
+
+exercise> //19. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which are not belonging to the borough Staten Island or Queens or Bronxor Brooklyn.
+exercise> db.restaurants.find({borough:{$nin:['Staten Island','Queens','Bronxor Brooklyn']}},{restaurant_id:1, name:1, borough:1, cuisine:1})
+
+
+exercise> //20. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which achieved a score which is not more than 10.
+exercise> db.restaurants.find({'grades.score':{$lt:10}},{restaurant_id:1, name:1, borough:1, cuisine:1})
+
+
+exercise> //21. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which prepared dish except 'American' and 'Chinees' or restaurant's name begins with letter 'Wil'.
+exercise> db.restaurants.find({$or:[{cuisine:{$nin:['American ','Chinese']}},{name:{$regex:/^Wil/}}]},{restaurant_id:1, name:1, borough:1, cuisine:1})
+
+
+exercise> //22. Write a MongoDB query to find the restaurant Id, name, and grades for those restaurants which achieved a grade of "A" and scored 11 on an ISODate "2014-08-11T00:00:00Z" among many of survey dates..
+exercise> db.restaurants.find({$and:[{'grades.score':'A'},{'grades.score':11},{'grades.date':ISODate('2014-08-11T00:00:00Z')}]},{restaurant_id:1, name:1, grades:1})
+
+
+exercise> //23. Write a MongoDB query to find the restaurant Id, name and grades for those restaurants where the 2nd element of grades array
+contains a grade of "A" and score 9 on an ISODate "2014-08-11T00:00:00Z".
+exercise> db.restaurants.find({$and:[{'grades.1.grade':'A'},{'grades.1.score':9},{'grades.1.date':ISODate('2014-08-11T00:00:00Z')}]},{restaurant_id:1, name:1, grades:1})
+
+
+exercise> //24. Write a MongoDB query to find the restaurant Id, name, address and geographical location for those restaurants where 2nd element of coord array contains a value which is more than 42 and upto 52
+exercise> db.restaurants.find({"address.coord.1":{$gt:42, $lte:52}},{restaurant_id:1, name:1, address:1, 'coord':1})
+
+
+exercise> //25. Write a MongoDB query to arrange the name of the restaurants in ascending order along with all the columns.
+exercise> db.restaurants.find().sort({name:1})
+
+
+exercise> //26. Write a MongoDB query to arrange the name of the restaurants in descending along with all the columns.
+exercise> db.restaurants.find().sort({name:-1})
+
+
+exercise> //27. Write a MongoDB query to arranged the name of the cuisine in ascending order and for that same cuisine borough should be in descending order.
+exercise> db.restaurants.find().sort({cuisine:1, borough:-1})
+
+
+exercise> //28. Write a MongoDB query to know whether all the addresses contains the street or not.
+exercise> db.restaurants.find({"address.street":{$exists:true}})
+
+
+exercise> //29. Write a MongoDB query which will select all documents in the restaurants collection where the coord field value is Double.
+exercise> db.restaurants.find({"address.coords":{$exists:true, $type:'bool'}})
+exercise> db.restaurants.find({"address.coords":{$exists:true, $type:1}})
+exercise> db.restaurants.find({"address.coords":{$exists:true, $type:'double'}})
+
+
+exercise> //30. Write a MongoDB query which will select the restaurant Id, name and grades for those restaurants which returns 0 as a remainder after dividing the score by 7.
+exercise> db.restaurants.find({'grades.score':{$mod:[7,0]}},{restaurant_id:1, name:1, grades:1})
+
+
+exercise> //31. Write a MongoDB query to find the restaurant name, borough, longitude and attitude and cuisine for those restaurants which contains 'mon' as three letters somewhere in its name.
+exercise> db.restaurants.find({name:{$regex:/.*mon.*/}},{restaurent_name:1, borough:1, 'address.coords':1,cuisine:1})
+exercise> db.restaurants.find({name:{$regex:/.*mon.*/}},{name:1, borough:1, 'address.coord':1,cuisine:1})
+
+
+exercise> //32. Write a MongoDB query to find the restaurant name, borough, longitude and latitude and cuisine for those restaurants which contain 'Mad' as first three letters of its name.
+exercise> db.restaurants.find({name:{$regex:/^Mad/}},{name:1, borough:1, 'address.coord':1,cuisine:1})
+
+
+exercise> //33. Write a MongoDB query to find the restaurants that have at least one grade with a score of less than 5
+exercise> db.restaurants.find({'grades.score':{$lt:5}},{name:1, borough:1, 'address.coord':1,cuisine:1})
+exercise> db.restaurants.find({'grades.score':{$lt:5}})
+
+
+exercise> //34. Write a MongoDB query to find the restaurants that have at least one grade with a score of less than 5 and that are located in the borough of Manhattan.
+exercise> db.restaurants.find({'grades.score':{$lt:5}, borough:'Manhattan'})
+
+
+exercise> //35. Write a MongoDB query to find the restaurants that have at least one grade with a score of less than 5 and that are located in the borough of Manhattan or Brooklyn.
+exercise> db.restaurants.find({'grades.score':{$lt:5},borough:{$in:['Manhattan','Brooklyn']}})
+
+
+exercise> //36. Write a MongoDB query to find the restaurants that have at least one grade with a score of less than 5 and that are located in the borough of Manhattan or Brooklyn, and their cuisine is not American.
+exercise> db.restaurants.find({'grades.score':{$lt:5},borough:{$in:['Manhattan','Brooklyn']},cuisine:{$nin:['American ']}})
+exercise> db.restaurants.find({'grades.score':{$lt:5},borough:{$in:['Manhattan','Brooklyn']},cuisine:{$nin:['American ']}})
+exercise> db.restaurants.find({'grades.score':{$lt:5},borough:{$in:['Manhattan','Brooklyn']},cuisine:{$ne:'American '}})
+
+
+exercise> //37. Write a MongoDB query to find the restaurants that have at least one grade with a score of less than 5 and that are located in the borough of Manhattan or Brooklyn, and their cuisine is not American or Chinese.
+exercise> db.restaurants.find({'grades.score':{$lt:5},borough:{$in:['Manhattan','Brooklyn']},cuisine:{$nin:['American ','Chinese']}})
+
+
+exercise> //38. Write a MongoDB query to find the restaurants that have a grade with a score of 2 and a grade with a score of 6.
+exercise> db.restaurants.find({$or:[{'grades.score':2},{'grades.score':6}]})
+exercise> db.restaurants.find({$and:[{'grades.score':2},{'grades.score':6}]})
+
+
+exercise> //39. Write a MongoDB query to find the restaurants that have a grade with a score of 2 and a grade with a score of 6 and are located in the borough of Manhattan.
+exercise> db.restaurants.find({$and:[{'grades.score':2},{'grades.score':6},{borough:'Manhattan'}]})
+
+
+exercise> //40. Write a MongoDB query to find the restaurants that have a grade with a score of 2 and a grade with a score of 6 and are located in the borough of Manhattan or Brooklyn.
+exercise> db.restaurants.find({$and:[{'grades.score':2},{'grades.score':6},{$or:[{borough:'Manhattan'},{borough:'Brooklyn'}]}]})
+
+
+exercise> //41. Write a MongoDB query to find the restaurants that have a grade with a score of 2 and a grade with a score of 6 and are located in the borough of Manhattan or Brooklyn, and their cuisine is not American.
+exercise> db.restaurants.find({ $and: [{ 'grades.score': 6 }, { 'grades.score': 2 }, { borough: { $in: ['Manhattan', 'Brooklyn'] } },{cuisine:{$ne:'American '}}]})
+
+
+exercise> //42. Write a MongoDB query to find the restaurants that have a grade with a score of 2 and a grade with a score of 6 and are located in the borough of Manhattan or Brooklyn, and their cuisine is not American or Chinese.
+exercise> db.restaurants.find({$and:[{"grades.score":2},{"grades.score":6},{borough:{$in:['Manhattan', 'Brooklyn']}},{$nor:[{cuisine:'American '},{cuisine:'Chinese'} ]}]})
+
+
+exercise> //43. Write a MongoDB query to find the restaurants that have a grade with a score of 2 or a grade with a score of 6.
+exercise> db.restaurants.find({$or:[{"grades.score":2},{"grades.score":6}]})
+
+
+exercise> //44. Write a MongoDB query to find the restaurants that have a grade with a score of 2 or a grade with a score of 6 and are located in the borough of Manhattan.
+exercise> db.restaurants.find({$and:[{$or:[{"grades.score":2},{"grades.score":6}]},{borough:'Manhattan'}]})
+
+
+exercise> //45. Write a MongoDB query to find the restaurants that have a grade with a score of 2 or a grade with a score of 6 and are located in the borough of Manhattan or Brooklyn.
+exercise> db.restaurants.find({$and:[{$or:[{"grades.score":2},{"grades.score":6}]},{borough:{$in:['Manhattan','Brooklyn']}}]})
+
+
+exercise> //46. Write a MongoDB query to find the restaurants that have a grade with a score of 2 or a grade with a score of 6 and are located in the borough of Manhattan or Brooklyn, and their cuisine is not American.
+exercise> db.restaurants.find({$and:[{$or:[{"grades.score":2},{"grades.score":6}]},{borough:{$in:['Manhattan','Brooklyn']}},{cuisine:{$ne:'American '}}]})
+
+
+exercise> //47. Write a MongoDB query to find the restaurants that have a grade with a score of 2 or a grade with a score of 6 and are located in the borough of Manhattan or Brooklyn, and their cuisine is not American or Chinese.
+exercise> db.restaurants.find({$and:[{$or:[{"grades.score":2},{"grades.score":6}]},{borough:{$in:['Manhattan','Brooklyn']}},{cuisine:{$nin:['American ', 'Chinese']}}]})
+
+
+exercise> //48. Write a MongoDB query to find the restaurants that have all grades with a score greater than 5.
+exercise> db.restaurants.find({"grades.score":{$gt:5}})
+
+
+exercise> //49. Write a MongoDB query to find the restaurants that have all grades with a score greater than 5 and are located in the borough of Manhattan.
+exercise> db.restaurants.find({$and:[{"grades.score":{$gt:5}},{borough:'Manhattan'}]})
+
+
+exercise> //50. Write a MongoDB query to find the restaurants that have all grades with a score greater than 5 and are located in the borough of Manhattan or Brooklyn.
+exercise> db.restaurants.find({$and:[{"grades.score":{$gt:5}},{borough:{$in:['Manhattan','Brooklyn']}}]})
+
+
+exercise> //51. Write a MongoDB query to find the average score for each restaurant.
+exercise> db.restaurants.find({$expr:{$avg:'grades.score'}})
+exercise> db.restaurants.aggregate([{$unwind:"$grades"}])
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$group:{_id:"$name",avgScore:{$avg:"$grades.score"}}}])
+exercise> db.restaurants.aggregate([{$unwind:"$grades"}])
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$group:{_id:"$name"}}])
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$group:{_id:"$name",avgScore:{$avg:"$grades.score"}}}])
+
+
+exercise> //52. Write a MongoDB query to find the highest score for each restaurant.
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$group:{_id:"$name",avgScore:{$max:"$grades.score"}}}])
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$group:{_id:"$name",maxScore:{$max:"$grades.score"}}}])
+
+
+exercise> //53. Write a MongoDB query to find the lowest score for each restaurant.
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$group:{_id:"$name",minScore:{$min:"$grades.score"}}}])
+
+
+exercise> //54. Write a MongoDB query to find the count of restaurants in each borough.
+exercise> db.restaurants.aggregate([{$group:{_id:"$borough"}}])
+exercise> db.restaurants.aggregate([{$group:{_id:"$borough",count:{$sum:1}}}])
+
+
+exercise> //55. Write a MongoDB query to find the count of restaurants for each cuisine.
+exercise> db.restaurants.aggregate([{$group:{_id:"cusine"}}])
+exercise> db.restaurants.aggregate([{$group:{_id:"$cuisine"}}])
+exercise> db.restaurants.aggregate([{$group:{_id:"$cuisine",restaurantCount:{$sum:1}}}])
+
+
+exercise> //56. Write a MongoDB query to find the count of restaurants for each cuisine and borough.
+exercise> db.restaurants.aggregate([{$group:{_id:"$cuisine"}}])
+exercise> db.restaurants.aggregate([{$group:{_id:{cuisine:"$cuisine",borough:"$borough"}}}])
+exercise> db.restaurants.aggregate([{$group:{_id:{cuisine:"$cuisine",borough:"$borough"}, restaurantCount:{$sum:1}}}])
+
+
+exercise> //57. Write a MongoDB query to find the count of restaurants that received a grade of 'A' for each cuisine.
+exercise> db.restaurants.aggregate([{$group:{_id:"$cuisine"}}])
+exercise> db.restaurants.aggregate([{$group:{_id:"$cuisine",restaurantCount:{$sum:1}}}])
+exercise> db.restaurants.aggregate([{$match:{"grades.grade":{eq:'A'}}},{$group:{_id:"$cuisine",restaurantCount:{$sum:1}}}])
+exercise> db.restaurants.aggregate([{$match:{"grades.grade":'A'}},{$group:{_id:"$cuisine",restaurantCount:{$sum:1}}}])
+//-----Correct Way-----//
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$match:{"grades.grade":'A'}},{$group:{_id:"$cuisine",restaurantCount:{$sum:1}}}])
+
+
+exercise> //58. Write a MongoDB query to find the count of restaurants that received a grade of 'A' for each borough.
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$group:{_id:"$borough"}}])
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$group:{_id:"$borough"}}])
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$group:{_id:"$borough", restaurantCounts:{$sum:1}}}])
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$match:{"grades.grade":'A'}},{$group:{_id:"$borough", restaurantCounts:{$sum:1}}}])
+
+
+exercise> //59. Write a MongoDB query to find the count of restaurants that received a grade of 'A' for each cuisine and borough.
+exercise> db.restaurants.aggregate([{$unwind:"$grades"},{$match:{"grades.grade":'A'}},{$group:{_id:{cuisine:"$cuisine",borough:"$borough"}, restaurantCounts:{$sum:1}}}])
+exercise> db.restaurants.aggregate([{$match:{"grades.grade":'A'}},{$group:{_id:{cuisine:"$cuisine",borough:"$borough"}, restaurantCounts:{$sum:1}}}])
+
+
+
+exercise> //60. Write a MongoDB query to find the number of restaurants that have been graded in each month of the year.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:"$name",count:{$sum:1}}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:{$month:"$grades.date"},count:{$sum:1}}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:{$month:"$grades.date"},count:{$sum:1}}},{$sort:{month:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:{$month:"$grades.date"},count:{$sum:1}}},{$sort:{month:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:{$month:"$grades.date"},count:{$sum:1}}},{$sort:{_id:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:{month:{$month:"$grades.date"}},count:{$sum:1}}},{$sort:{_id:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:{$month:"$grades.date"},count:{$sum:1}}},{$sort:{_id:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:{$month:"$grades.date"},count:{$sum:1}}},{$project:{month:'$_id'}},{$sort:{_id:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:{$month:"$grades.date"},count:{$sum:1}}},{$sort:{_id:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:{$month:"$grades.date"},count:{$sum:1}}},{$sort:{_id:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$project:{month:{$month:{$toDate:'$grades.date'}},year:{$year:{$toDate:'$grades.date'}}}},{$group:{_id:{$month:"$grades.date"},count:{$sum:1}}},{$sort:{_id:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$project:{month:{$month:{$toDate:'$grades.date'}},year:{$year:{$toDate:'$grades.date'}}}},{$group:{_id:{month:"$month",year:"$year"},count:{$sum:1}}},{$sort:{_id:1}}])
+
+
+exercise> //61. Write a MongoDB query to find the average score for each cuisine.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$cuisine'}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$cuisine',avgScore:{$avg:'$cuisin'}}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$cuisine',avgScore:{$avg:'$score'}}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$cuisine',avgScore:{$avg:'$grades.score'}}}])
+
+
+exercise> //62. Write a MongoDB query to find the highest score for each cuisine
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$cuisine',maxScore:{$max:'$grades.score'}}}])
+
+
+exercise> //63. Write a MongoDB query to find the lowest score for each cuisine.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$cuisine', minScore:{$min:'$grades.score'}}}])
+
+
+exercise> //64. Write a MongoDB query to find the average score for each borough.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$borough',avgScore:{$avg:'$grades.score'}}}])
+
+
+exercise> //65. Write a MongoDB query to find the highest score for each borough.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$borough',maxScore:{$max:'$grades.score'}}}])
+
+
+exercise> //66. Write a MongoDB query to find the lowest score for each borough.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$borough',minScore:{$min:'$grades.score'}}}])
+
+
+exercise> //67. Write a MongoDB query to find the name and address of the restaurants that received a grade of 'A' on a specific date.
+exercise> db.restaurants.find({grades:{$elemMatch:{grade:{$eq:'A'}, date:{$eq:ISODate("2013-07-22T00:00:00Z")}}}},{name:1, address:1})
+
+
+exercise> //68. Write a MongoDB query to find the name and address of the restaurants that received a grade of 'B' or 'C' on a specific date.
+exercise> db.restaurants.find({grades:{$elemMatch:{grade:{$in:['A','B']}, date:ISODate("2013-07-22T00:00:00Z")}}},{name:1, address:1})
+
+
+exercise> //69. Write a MongoDB query to find the name and address of the restaurants that have at least one 'A' grade and one 'B' grade.
+exercise> db.restaurants.find({$and:[{'grades.grade':'A'},{'grades.grade':'B'}]},{name:1,address:1})
+
+
+exercise> //70. Write a MongoDB query to find the name and address of the restaurants that have at least one 'A' grade and no 'B' grades.
+exercise> db.restaurants.find({$and:[{'grades.grade':'A'},{'grades.grade':{$ne:'B'}}]},{name:1,address:1})
+
+
+exercise> //71. Write a MongoDB query to find the name ,address and grades of the restaurants that have at least one 'A' grade and no 'C' grades.
+exercise> db.restaurants.find({$and:[{'grades.grade':{$eq:'A'}},{'grades.grade':{$ne:'C'}}]},{name:1, address:1, grades:1})
+
+
+exercise> //72. Write a MongoDB query to find the name, address, and grades of the restaurants that have at least one 'A' grade, no 'B' grades, and no 'C' grades.
+exercise> db.restaurants.find({$and:[{'grades.grade':{$eq:'A'}},{'grades.grade':{$ne:'C'}},{'grades.grade':{$ne:'B'}}]},{name:1, address:1, grades:1})
+
+
+exercise> //73. Write a MongoDB query to find the name and address of the restaurants that have the word 'coffee' in their name.
+exercise> db.restaurants.find({name:{$regex:/.*coffee.*/i}},{name:1, address:1})
+
+
+exercise> //74. Write a MongoDB query to find the name and address of the restaurants that have a zipcode that starts with '10'.
+exercise> db.restaurants.find({'address.zipcode':{$regex:/^10/}},{name:1, address:1})
+
+
+exercise> //75. Write a MongoDB query to find the name and address of the restaurants that have a cuisine that starts with the letter 'B'.
+exercise> db.restaurants.find({cuisine:{$regex:/^B/}},{name:1, address:1})
+// Alternate approach with PipiLine
+exercise> db.restaurants.aggregate([{$match:{name:{$regex:/^B/}}},{$project:{name:1, address:1}}])
+
+
+exercise> //76. Write a MongoDB query to find the name, address, and cuisine of the restaurants that have a cuisine that ends with the letter 'y'
+exercise> db.restaurants.find({name:{$regex:/y$/}},{name:1, address:1, cuisine:1})
+// Alternate approach with PipiLine
+exercise> db.restaurants.aggregate([{$match:{name:{$regex:/y$/}}},{$project:{name:1, address:1, cuisine:1}}])
+
+
+exercise> //77. Write a MongoDB query to find the name, address, and cuisine of the restaurants that have a cuisine that contains the word 'Pizza'.
+exercise> db.restaurants.find({cuisine:{$regex:/.*Pizza.*/}},{name:1, address:1, cuisine:1})
+// Alternate approach with PipiLine
+exercise> db.restaurants.aggregate([{$match:{cuisine:{$regex:/.*Pizza.*/}}},{$project:{name:1, address:1, cuisine:1}}])
+
+
+exercise> //78. Write a MongoDB query to find the restaurants achieved highest average score.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$name'}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$name',avgHighScore:{$avg:'$grades.score'}}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$name',avgHighScore:{$avg:'$grades.score'}}},{$sort:{avgHighScore:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$name',avgHighScore:{$avg:'$grades.score'}}},{$sort:{avgHighScore:-1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$name',avgHighScore:{$avg:'$grades.score'}}},{$sort:{avgHighScore:-1}},{$limit:1}])
+
+
+exercise> //79. Write a MongoDB query to find all the restaurants with the highest number of "A" grades.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{'grades.grade':'A'}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{'grades.grade':'A'}},{$group:{_id:"$name"}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{'grades.grade':'A'}},{$group:{_id:"$name",count:{$sum:1}}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{'grades.grade':'A'}},{$group:{_id:"$name",count:{$sum:1}}},{$sort:{count:-1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{'grades.grade':'A'}},{$group:{_id:"$name",count:{$sum:1}}},{$sort:{count:-1}},{$limit:1}])
+
+
+exercise> //80. Write a MongoDB query to find the cuisine type that is most likely to receive a "C" grade.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{'grades.grade':'C'}},{$group:{_id:"$cuisine",count:{$sum:1}}},{$sort:{count:-1}},{$limit:1}])
+
+
+exercise> //81. Write a MongoDB query to find the restaurant that has the highest average score for thecuisine "Turkish".
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{cuisine:'Turkish'}},{$group:{_id:'$name',avgScore:{$avg:'$grades.score'}}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{cuisine:'Turkish'}},{$group:{_id:'$name',avgScore:{$avg:'$grades.score'}}},{$sort:{avgScore:1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{cuisine:'Turkish'}},{$group:{_id:'$name',avgScore:{$avg:'$grades.score'}}},{$sort:{avgScore:-1}}])
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{cuisine:'Turkish'}},{$group:{_id:'$name',avgScore:{$avg:'$grades.score'}}},{$sort:{avgScore:-1}},{$limit:1}])
+
+
+exercise> //82. Write a MongoDB query to find the restaurants that achieved the highest total score.      
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:'$name', totalScore:{$sum:'$grades.score'}}},{$sort:{totalScore:-1}}])                                                                                         
+
+
+exercise> //83. Write a MongoDB query to find all the Chinese restaurants in Brooklyn.
+exercise> db.restaurants.find({borough:'Brooklyn', cuisine:'Chinese'})   
+
+
+exercise> //84. Write a MongoDB query to find the restaurant with the most recent grade date.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$sort:{'grades.date':-1}},{$limit:1}])   
+
+
+exercise> //85. Write a MongoDB query to find the top 5 restaurants with the highest average score for each cuisine type, along with their average scores.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$group:{_id:{restaurant:'$name',cuisine:'$cuisine'},avgScore:{$avg:'$grades.score'}}},{$sort:{cuisine:1, avgScore:-1}},{$group:{_id:'$_id.cuisine',restaurant:{$push:{name:"$_id.restaurant",avgScore:"$avgScore"}}}},{$project:{_id:1,topFiveRestaurant:{$slice:["$restaurant",5]}}}])
+
+
+exercise> //86. Write a MongoDB query to find the top 5 restaurants in each borough with the highest number of "A" grades.
+exercise> db.restaurants.aggregate([{$unwind:'$grades'},{$match:{'grades.grade':'A'}},{$group:{_id:{borough:'$borough',restaurant:'$name'}, topRatedRestaurant:{$sum:1}}},{$sort:{borough:1, topRatedRestaurant:-1}},{$group:{_id:"$_id.borough",restaurants:{$push:{restaurant:"$_id.restaurant", count:'$topRatedRestaurant'}}}},{$project:{borough:'$_borough',topRestaurants:{$slice:["$restaurants",5]}}}])
+
+
+exercise> //87. Write a MongoDB query to find the borough with the highest number of restaurants that have a grade of "A" and a score greater than or equal to 90.
+db.restaurants.aggregate([{$unwind:"$grades"},{$match:{'grades.grade':'A', 'grades.score':{$gte:90}}},{$group:{_id:"$borough",restaurantCount:{$sum:1}}},{$sort:{restaurantCount:1}},{$limit:1}])    

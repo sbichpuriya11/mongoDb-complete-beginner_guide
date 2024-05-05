@@ -1,0 +1,655 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb://localhost:27017
+mongodb://localhost:27017
+Current Mongosh Log ID: 662ef0bc4d9b020e0346b798
+Connecting to:          mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.5
+Using MongoDB:          7.0.8
+Using Mongosh:          2.2.5
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-04-28T23:08:50.451+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin         40.00 KiB
+config        72.00 KiB
+ecommerece    40.00 KiB
+hooks         48.00 KiB
+local         72.00 KiB
+mydb         112.00 KiB
+products      72.00 KiB
+school        72.00 KiB
+session1_db  112.00 KiB
+test> use school
+switched to db school
+school> show collections
+students
+school> db.students.find()
+[
+  {
+    _id: ObjectId('662c0595bc4e4460df46b79a'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059bbc4e4460df46b79b'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059fbc4e4460df46b79c'),
+    name: 'Ishita Sharma',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a4bc4e4460df46b79d'),
+    name: 'Advik Singh',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a8bc4e4460df46b79e'),
+    name: 'Diya Shah',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05aebc4e4460df46b79f'),
+    name: 'Arjun Gupta',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b0bc4e4460df46b7a0'),
+    name: 'Ananya Reddy',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b7bc4e4460df46b7a1'),
+    name: 'Vihaan Kumar',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bbbc4e4460df46b7a2'),
+    name: 'Zoya Khan',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bebc4e4460df46b7a3'),
+    name: 'Ayaan Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c2bc4e4460df46b7a4'),
+    name: 'Saanvi Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c7bc4e4460df46b7a5'),
+    name: 'Kabir Singh',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ccbc4e4460df46b7a6'),
+    name: 'Aisha Gupta',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d3bc4e4460df46b7a7'),
+    name: 'Rehan Kapoor',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: false },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d7bc4e4460df46b7a8'),
+    name: 'Anika Reddy',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05dabc4e4460df46b7a9'),
+    name: 'Dhruv Kumar',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ddbc4e4460df46b7aa'),
+    name: 'Nitya Shah',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e2bc4e4460df46b7ab'),
+    name: 'Yuvraj Singh',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: true },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e4bc4e4460df46b7ac'),
+    name: 'Tanisha Patel',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+    name: 'Aarush Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  }
+]
+Type "it" for more
+school> db.students.find({$expr:{$gt:["age",{$avg:"age"}]}})
+[
+  {
+    _id: ObjectId('662c0595bc4e4460df46b79a'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059bbc4e4460df46b79b'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059fbc4e4460df46b79c'),
+    name: 'Ishita Sharma',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a4bc4e4460df46b79d'),
+    name: 'Advik Singh',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a8bc4e4460df46b79e'),
+    name: 'Diya Shah',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05aebc4e4460df46b79f'),
+    name: 'Arjun Gupta',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b0bc4e4460df46b7a0'),
+    name: 'Ananya Reddy',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b7bc4e4460df46b7a1'),
+    name: 'Vihaan Kumar',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bbbc4e4460df46b7a2'),
+    name: 'Zoya Khan',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bebc4e4460df46b7a3'),
+    name: 'Ayaan Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c2bc4e4460df46b7a4'),
+    name: 'Saanvi Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c7bc4e4460df46b7a5'),
+    name: 'Kabir Singh',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ccbc4e4460df46b7a6'),
+    name: 'Aisha Gupta',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d3bc4e4460df46b7a7'),
+    name: 'Rehan Kapoor',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: false },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d7bc4e4460df46b7a8'),
+    name: 'Anika Reddy',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05dabc4e4460df46b7a9'),
+    name: 'Dhruv Kumar',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ddbc4e4460df46b7aa'),
+    name: 'Nitya Shah',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e2bc4e4460df46b7ab'),
+    name: 'Yuvraj Singh',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: true },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e4bc4e4460df46b7ac'),
+    name: 'Tanisha Patel',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+    name: 'Aarush Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  }
+]
+Type "it" for more
+school> db.students.find({$regex:'/A^/'})
+MongoServerError[BadValue]: unknown top level operator: $regex. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.
+school> db.students.find({name:{$regex:'/A^/'}})
+
+school> db.students.find({name:{$regex:'/^A/'}})
+
+school> db.students.find({name:{$regex:/A^/}})
+
+school> db.students.find({name:{$regex:/^A/}})
+[
+  {
+    _id: ObjectId('662c0595bc4e4460df46b79a'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059bbc4e4460df46b79b'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a4bc4e4460df46b79d'),
+    name: 'Advik Singh',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05aebc4e4460df46b79f'),
+    name: 'Arjun Gupta',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b0bc4e4460df46b7a0'),
+    name: 'Ananya Reddy',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bebc4e4460df46b7a3'),
+    name: 'Ayaan Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ccbc4e4460df46b7a6'),
+    name: 'Aisha Gupta',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d7bc4e4460df46b7a8'),
+    name: 'Anika Reddy',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+    name: 'Aarush Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  }
+]
+Please enter a MongoDB connection string (Default: mongodb://localhost/):school> db.students.createIndex({name:"text"})
+name_text
+school> db.students.find()
+[
+  {
+    _id: ObjectId('662c0595bc4e4460df46b79a'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059bbc4e4460df46b79b'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059fbc4e4460df46b79c'),
+    name: 'Ishita Sharma',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a4bc4e4460df46b79d'),
+    name: 'Advik Singh',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a8bc4e4460df46b79e'),
+    name: 'Diya Shah',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05aebc4e4460df46b79f'),
+    name: 'Arjun Gupta',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b0bc4e4460df46b7a0'),
+    name: 'Ananya Reddy',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b7bc4e4460df46b7a1'),
+    name: 'Vihaan Kumar',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bbbc4e4460df46b7a2'),
+    name: 'Zoya Khan',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bebc4e4460df46b7a3'),
+    name: 'Ayaan Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c2bc4e4460df46b7a4'),
+    name: 'Saanvi Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c7bc4e4460df46b7a5'),
+    name: 'Kabir Singh',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ccbc4e4460df46b7a6'),
+    name: 'Aisha Gupta',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d3bc4e4460df46b7a7'),
+    name: 'Rehan Kapoor',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: false },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d7bc4e4460df46b7a8'),
+    name: 'Anika Reddy',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05dabc4e4460df46b7a9'),
+    name: 'Dhruv Kumar',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ddbc4e4460df46b7aa'),
+    name: 'Nitya Shah',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e2bc4e4460df46b7ab'),
+    name: 'Yuvraj Singh',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: true },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e4bc4e4460df46b7ac'),
+    name: 'Tanisha Patel',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+    name: 'Aarush Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  }
+]
+Type "it" for more
+school> db.students.find($text:{$search:"Sharma"})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:22)
+
+> 1 | db.students.find($text:{$search:"Sharma"})
+    |                       ^
+  2 |
+
+school> db.students.find({$text:{$search:"Sharma"}})
+[
+  {
+    _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+    name: 'Aarush Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bebc4e4460df46b7a3'),
+    name: 'Ayaan Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059fbc4e4460df46b79c'),
+    name: 'Ishita Sharma',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  }
+]
+school> db.students.find({$text:{$search:"arma"}})
+
+school> // only search for specific keywords
+
+school> db.students.find({$age:{$mod:[2,0]}})
+MongoServerError[BadValue]: unknown top level operator: $age. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.
+school> db.students.find({age:{$mod:[2,0]}})
+[
+  {
+    _id: ObjectId('662c0595bc4e4460df46b79a'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059bbc4e4460df46b79b'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059fbc4e4460df46b79c'),
+    name: 'Ishita Sharma',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a8bc4e4460df46b79e'),
+    name: 'Diya Shah',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b7bc4e4460df46b7a1'),
+    name: 'Vihaan Kumar',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bbbc4e4460df46b7a2'),
+    name: 'Zoya Khan',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c2bc4e4460df46b7a4'),
+    name: 'Saanvi Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c7bc4e4460df46b7a5'),
+    name: 'Kabir Singh',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d3bc4e4460df46b7a7'),
+    name: 'Rehan Kapoor',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: false },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d7bc4e4460df46b7a8'),
+    name: 'Anika Reddy',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e2bc4e4460df46b7ab'),
+    name: 'Yuvraj Singh',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: true },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e4bc4e4460df46b7ac'),
+    name: 'Tanisha Patel',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ebbc4e4460df46b7ae'),
+    name: 'Kiara Gupta',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  }
+]
+school> db.students.find({age:{$mod:[2,1]}})
+[
+  {
+    _id: ObjectId('662c05a4bc4e4460df46b79d'),
+    name: 'Advik Singh',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05aebc4e4460df46b79f'),
+    name: 'Arjun Gupta',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b0bc4e4460df46b7a0'),
+    name: 'Ananya Reddy',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bebc4e4460df46b7a3'),
+    name: 'Ayaan Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ccbc4e4460df46b7a6'),
+    name: 'Aisha Gupta',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05dabc4e4460df46b7a9'),
+    name: 'Dhruv Kumar',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ddbc4e4460df46b7aa'),
+    name: 'Nitya Shah',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+    name: 'Aarush Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662e0ff4cdeb4c4a0946b799'),
+    name: 'Narendra Modi',
+    age: 73,
+    hobbies: [ 'Yoga', 'Social Work' ]
+  },
+  {
+    _id: ObjectId('662e1032cdeb4c4a0946b79a'),
+    name: 'Ranath Singh',
+    age: 73,
+    hobbies: [ 'Politics' ],
+    hasMacBook: true
+  }
+school>

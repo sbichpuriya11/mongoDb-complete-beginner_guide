@@ -1,0 +1,23 @@
+Microsoft Windows [Version 10.0.22631.3527]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Somil>mongoimport
+2024-05-02T22:00:26.328+0530    no collection specified
+2024-05-02T22:00:26.329+0530    using filename '' as collection
+2024-05-02T22:00:26.329+0530    error validating settings: invalid collection name: collection name cannot be an empty string
+
+C:\Users\Somil>mongoimport "D:\Courses\mongoDb\Exercise\restaurants.json"
+2024-05-02T22:00:54.914+0530    no collection specified
+2024-05-02T22:00:54.915+0530    using filename 'restaurants' as collection
+2024-05-02T22:00:55.542+0530    connected to: mongodb://localhost/
+2024-05-02T22:00:55.739+0530    3772 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\Somil>mongoimport "D:\Courses\mongoDb\Exercise\restaurants.json" -d exercise -c restaurents
+2024-05-02T22:03:30.568+0530    connected to: mongodb://localhost/
+2024-05-02T22:03:30.753+0530    3772 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\Somil>mongoimport "D:\Courses\mongoDb\Exercise\restaurants.json" -d exercise -c restaurants
+2024-05-02T22:04:57.350+0530    connected to: mongodb://localhost/
+2024-05-02T22:04:57.538+0530    3772 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\Somil>

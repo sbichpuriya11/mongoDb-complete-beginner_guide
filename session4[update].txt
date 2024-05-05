@@ -1,0 +1,207 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb://localhost:27017
+mongodb://localhost:27017
+Current Mongosh Log ID: 662bffe784a33a896446b798
+Connecting to:          mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.5
+Using MongoDB:          7.0.8
+Using Mongosh:          2.2.5
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-04-26T21:28:02.521+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin         40.00 KiB
+config       108.00 KiB
+local         72.00 KiB
+school        72.00 KiB
+session1_db   72.00 KiB
+test> use school
+switched to db school
+school> db.students.find()
+[
+  { _id: ObjectId('662bfe0a16c86bf2d246b7ad'), name: 'Ram', age: 12 },
+  { _id: ObjectId('662bfe6616c86bf2d246b7ae'), name: 'Ankit', age: 13 },
+  { _id: ObjectId('662bfee116c86bf2d246b7af'), name: 'Vijay', age: 23 },
+  { _id: ObjectId('662bfee116c86bf2d246b7b0'), name: 'Nitin', age: 34 },
+  { _id: ObjectId('662bfee116c86bf2d246b7b1'), name: 'Sagar', age: 24 },
+  { _id: ObjectId('662bfee116c86bf2d246b7b2'), name: 'Tanu', age: 21 }
+]
+school> db.students.updateOne({name:"Vijay"},{age:20})
+MongoInvalidArgumentError: Update document requires atomic operators
+school> db.students.updateOne({name:"Vijay"},{$set:{age:15}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.find()
+[
+  { _id: ObjectId('662bfe0a16c86bf2d246b7ad'), name: 'Ram', age: 12 },
+  { _id: ObjectId('662bfe6616c86bf2d246b7ae'), name: 'Ankit', age: 13 },
+  { _id: ObjectId('662bfee116c86bf2d246b7af'), name: 'Vijay', age: 15 },
+  { _id: ObjectId('662bfee116c86bf2d246b7b0'), name: 'Nitin', age: 34 },
+  { _id: ObjectId('662bfee116c86bf2d246b7b1'), name: 'Sagar', age: 24 },
+  { _id: ObjectId('662bfee116c86bf2d246b7b2'), name: 'Tanu', age: 21 }
+]
+school> db.students.updateMany({age:{$gte:25}},{$set:{age:age+1}})
+ReferenceError: age is not defined
+school> db.students.updateMany({age:{$gte:25}},{$set:{age:this.age+1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.updateMany({age:{$gte:20}},{$set:{age:this.age+1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+school> db.students.find()
+[
+  { _id: ObjectId('662bfe0a16c86bf2d246b7ad'), name: 'Ram', age: 12 },
+  { _id: ObjectId('662bfe6616c86bf2d246b7ae'), name: 'Ankit', age: 13 },
+  { _id: ObjectId('662bfee116c86bf2d246b7af'), name: 'Vijay', age: 15 },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b0'),
+    name: 'Nitin',
+    age: NaN
+  },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b1'),
+    name: 'Sagar',
+    age: NaN
+  },
+  { _id: ObjectId('662bfee116c86bf2d246b7b2'), name: 'Tanu', age: NaN }
+]
+school> db.students.updateMany({age:{$gte:20}},{$set:{age:Number(this.age+1)}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+school> db.students.updateMany({age:NaN},{$set:{isEligible:false}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+school> db.students.find()
+[
+  { _id: ObjectId('662bfe0a16c86bf2d246b7ad'), name: 'Ram', age: 12 },
+  { _id: ObjectId('662bfe6616c86bf2d246b7ae'), name: 'Ankit', age: 13 },
+  { _id: ObjectId('662bfee116c86bf2d246b7af'), name: 'Vijay', age: 15 },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b0'),
+    name: 'Nitin',
+    age: NaN,
+    isEligible: false
+  },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b1'),
+    name: 'Sagar',
+    age: NaN,
+    isEligible: false
+  },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b2'),
+    name: 'Tanu',
+    age: NaN,
+    isEligible: false
+  }
+]
+school> db.students.updateMany({age:!NaN},{$set:{isEligible:true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+school> db.students.find()
+[
+  { _id: ObjectId('662bfe0a16c86bf2d246b7ad'), name: 'Ram', age: 12 },
+  { _id: ObjectId('662bfe6616c86bf2d246b7ae'), name: 'Ankit', age: 13 },
+  { _id: ObjectId('662bfee116c86bf2d246b7af'), name: 'Vijay', age: 15 },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b0'),
+    name: 'Nitin',
+    age: NaN,
+    isEligible: false
+  },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b1'),
+    name: 'Sagar',
+    age: NaN,
+    isEligible: false
+  },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b2'),
+    name: 'Tanu',
+    age: NaN,
+    isEligible: false
+  }
+]
+school> db.students.updateMany({age:{$nin:NaN}},{$set:{isEligible:true}})
+MongoServerError: $nin needs an array
+school> db.students.updateMany({age:{$ne:NaN}},{$set:{isEligible:true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+school> db.students.find()
+[
+  {
+    _id: ObjectId('662bfe0a16c86bf2d246b7ad'),
+    name: 'Ram',
+    age: 12,
+    isEligible: true
+  },
+  {
+    _id: ObjectId('662bfe6616c86bf2d246b7ae'),
+    name: 'Ankit',
+    age: 13,
+    isEligible: true
+  },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7af'),
+    name: 'Vijay',
+    age: 15,
+    isEligible: true
+  },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b0'),
+    name: 'Nitin',
+    age: NaN,
+    isEligible: false
+  },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b1'),
+    name: 'Sagar',
+    age: NaN,
+    isEligible: false
+  },
+  {
+    _id: ObjectId('662bfee116c86bf2d246b7b2'),
+    name: 'Tanu',
+    age: NaN,
+    isEligible: false
+  }
+]
+school>

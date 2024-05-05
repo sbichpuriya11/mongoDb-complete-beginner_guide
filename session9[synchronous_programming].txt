@@ -1,0 +1,140 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb://localhost:27017
+mongodb://localhost:27017
+Current Mongosh Log ID: 662c0ed5ffe7b331ba46b798
+Connecting to:          mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.5
+Using MongoDB:          7.0.8
+Using Mongosh:          2.2.5
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-04-26T21:28:02.521+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin         40.00 KiB
+config       108.00 KiB
+local         72.00 KiB
+mydb          40.00 KiB
+school        72.00 KiB
+session1_db  112.00 KiB
+test> use mydb
+switched to db mydb
+mydb> show collections
+products
+mydb> db.books.insertMany([{name:"A",price:1},{name:"B",price:2},{name:"C",price:3}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('662c0f5fffe7b331ba46b799'),
+    '1': ObjectId('662c0f5fffe7b331ba46b79a'),
+    '2': ObjectId('662c0f5fffe7b331ba46b79b')
+  }
+}
+mydb> db.books.find()
+[
+  { _id: ObjectId('662c0f5fffe7b331ba46b799'), name: 'A', price: 1 },
+  { _id: ObjectId('662c0f5fffe7b331ba46b79a'), name: 'B', price: 2 },
+  { _id: ObjectId('662c0f5fffe7b331ba46b79b'), name: 'C', price: 3 }
+]
+mydb> db.books.deleteMany()
+MongoshInvalidInputError: [COMMON-10001] Missing required argument at position 0 (Collection.deleteMany)
+mydb> db.books.deleteMany({})
+{ acknowledged: true, deletedCount: 3 }
+mydb> db.books.insertMany([{_id:"A",name:"A",price:1},{_id:"B",name:"B",price:2},{_id:"C",name:"C",price:3}])
+{ acknowledged: true, insertedIds: { '0': 'A', '1': 'B', '2': 'C' } }
+mydb> db.books.find()
+[
+  { _id: 'A', name: 'A', price: 1 },
+  { _id: 'B', name: 'B', price: 2 },
+  { _id: 'C', name: 'C', price: 3 }
+]
+mydb> db.books.insertMany([{_id:"A",name:"A",price:1},{_id:"B",name:"B",price:2},{_id:"C",name:"C",price:3}])
+Uncaught:
+MongoBulkWriteError: E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "A" }
+Result: BulkWriteResult {
+  insertedCount: 0,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: {}
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 0,
+      code: 11000,
+      errmsg: 'E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "A" }',
+      errInfo: undefined,
+      op: { _id: 'A', name: 'A', price: 1 }
+    }
+  }
+]
+mydb> db.books.insertMany([{_id:"D",name:"D",price:1},{_id:"B",name:"B",price:2},{_id:"F",name:"F",price:3}])
+Uncaught:
+MongoBulkWriteError: E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "B" }
+Result: BulkWriteResult {
+  insertedCount: 1,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: { '0': 'D' }
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 1,
+      code: 11000,
+      errmsg: 'E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "B" }',
+      errInfo: undefined,
+      op: { _id: 'B', name: 'B', price: 2 }
+    }
+  }
+]
+mydb> db.books.find()
+[
+  { _id: 'A', name: 'A', price: 1 },
+  { _id: 'B', name: 'B', price: 2 },
+  { _id: 'C', name: 'C', price: 3 },
+  { _id: 'D', name: 'D', price: 1 }
+]
+mydb> //here records are inserted in serial manner synchronously
+
+mydb> db.books.insertMany([{_id:"DD",name:"DD",price:1},{_id:"B",name:"B",price:2},{_id:"F",name:"F",price:3}],{ordered:false})
+Uncaught:
+MongoBulkWriteError: E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "B" }
+Result: BulkWriteResult {
+  insertedCount: 2,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: { '0': 'DD', '2': 'F' }
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 1,
+      code: 11000,
+      errmsg: 'E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "B" }',
+      errInfo: undefined,
+      op: { _id: 'B', name: 'B', price: 2 }
+    }
+  }
+]
+mydb> db.books.find()
+[
+  { _id: 'A', name: 'A', price: 1 },
+  { _id: 'B', name: 'B', price: 2 },
+  { _id: 'C', name: 'C', price: 3 },
+  { _id: 'D', name: 'D', price: 1 },
+  { _id: 'DD', name: 'DD', price: 1 },
+  { _id: 'F', name: 'F', price: 3 }
+]
+mydb>

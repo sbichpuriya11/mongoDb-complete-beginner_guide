@@ -1,0 +1,81 @@
+school> db.students.insertOne({name:"Narendra Modi", age:73, hobbies:["Yoga", "Social Work"]})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662e0ff4cdeb4c4a0946b799')
+}
+school> db.students.insertOne({name:"Ranath Singh", age:73, hobbies:["Politics"], hasMacBook:true})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662e1032cdeb4c4a0946b79a')
+}
+school> db.find({hasMacBook:true})
+TypeError: db.find is not a function
+school> db.students.find({hasMacBook:true})
+[
+  {
+    _id: ObjectId('662e1032cdeb4c4a0946b79a'),
+    name: 'Ranath Singh',
+    age: 73,
+    hobbies: [ 'Politics' ],
+    hasMacBook: true
+  }
+]
+school> db.students.find({hasMacBook:{$exists:true}})
+[
+  {
+    _id: ObjectId('662e1032cdeb4c4a0946b79a'),
+    name: 'Ranath Singh',
+    age: 73,
+    hobbies: [ 'Politics' ],
+    hasMacBook: true
+  }
+]
+school> db.students.find({hasMacBook:{$exists:true, $eq:false}})
+
+school> db.students.find({hasMacBook:{$exists:true, $eq:true}})
+[
+  {
+    _id: ObjectId('662e1032cdeb4c4a0946b79a'),
+    name: 'Ranath Singh',
+    age: 73,
+    hobbies: [ 'Politics' ],
+    hasMacBook: true
+  }
+]
+school> db.students.find({hasMacBook:{$exists:true, $type:Boolean}})
+MongoServerError[TypeMismatch]: type must be represented as a number or a string
+school> db.students.find({hasMacBook:{$exists:true, $type:'Boolean'}})
+MongoServerError[BadValue]: Unknown type name alias: Boolean
+school> db.students.find({hasMacBook:{$exists:true, $type:'1'}})
+MongoServerError[BadValue]: Unknown type name alias: 1
+school> db.students.find({hasMacBook:{$exists:true, $type:8}})
+[
+  {
+    _id: ObjectId('662e1032cdeb4c4a0946b79a'),
+    name: 'Ranath Singh',
+    age: 73,
+    hobbies: [ 'Politics' ],
+    hasMacBook: true
+  }
+]
+school> db.students.find({hasMacBook:{$exists:true, $type:'bool'}})
+[
+  {
+    _id: ObjectId('662e1032cdeb4c4a0946b79a'),
+    name: 'Ranath Singh',
+    age: 73,
+    hobbies: [ 'Politics' ],
+    hasMacBook: true
+  }
+]
+school> db.students.find({hasMacBook:{ $type:'bool'}})
+[
+  {
+    _id: ObjectId('662e1032cdeb4c4a0946b79a'),
+    name: 'Ranath Singh',
+    age: 73,
+    hobbies: [ 'Politics' ],
+    hasMacBook: true
+  }
+]
+school>

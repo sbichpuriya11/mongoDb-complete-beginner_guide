@@ -1,0 +1,37 @@
+Here are the commands extracted from the provided MongoDB log:
+
+1. `show dbs`: Displays a list of all databases on the MongoDB server along with their sizes in kilobytes (KiB).
+   
+2. `use college`: Switches the current database context to `college`.
+
+3. `db.students.find()`: Finds all documents in the `students` collection.
+
+4. `db.students.find().pretty()`: Finds all documents in the `students` collection and formats the output for better readability.
+
+5. `db.students.findOne({name:"Daniel Kim"})`: Finds a single document in the `students` collection where the `name` field is equal to "Daniel Kim".
+
+6. `db.students.find({name:'Daniel Kim'},{name:0}).pretty()`: Finds all documents in the `students` collection where the `name` field is equal to "Daniel Kim" and excludes the `name` field from the output.
+
+7. `db.students.find({name:'Daniel Kim'},{name:1}).pretty()`: Finds all documents in the `students` collection where the `name` field is equal to "Daniel Kim" and includes only the `name` field in the output.
+
+8. `db.students.find({name:'Daniel Kim'},{name:1,_id:0}).pretty()`: Finds all documents in the `students` collection where the `name` field is equal to "Daniel Kim" and excludes the `_id` field from the output.
+
+9. `db.students.find({gender:"Male"})`: Finds all documents in the `students` collection where the `gender` field is equal to "Male".
+
+10. `db.students.findOne({gender:"Male"})`: Finds a single document in the `students` collection where the `gender` field is equal to "Male".
+
+11. `db.students.find({gender:"Male"}).pretty().limit(1)`: Finds and displays the first document in the `students` collection where the `gender` field is equal to "Male".
+
+12. `db.students.find({gender:"Male"}).pretty().limit(2)`: Finds and displays the first two documents in the `students` collection where the `gender` field is equal to "Male".
+
+13. `db.students.findOne({gender:"Male"})`: Finds a single document in the `students` collection where the `gender` field is equal to "Male".
+
+14. `db.students.find({gender:"Male"}).pretty().skip(1).limit(1)`: Finds and displays the second document in the `students` collection where the `gender` field is equal to "Male", skipping the first document.
+
+To start `mongosh`, you typically don't need to look at the log. You can simply open your terminal or command prompt and type `mongosh` followed by your MongoDB connection string. For example:
+
+```
+mongosh mongodb://localhost:27017
+```
+
+This will start the `mongosh` shell and connect to the MongoDB server running on `localhost` at port `27017`.

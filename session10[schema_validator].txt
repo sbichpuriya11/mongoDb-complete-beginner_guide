@@ -1,0 +1,842 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb://localhost:27017
+mongodb://localhost:27017
+Current Mongosh Log ID: 662c0ed5ffe7b331ba46b798
+Connecting to:          mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.5
+Using MongoDB:          7.0.8
+Using Mongosh:          2.2.5
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-04-26T21:28:02.521+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin         40.00 KiB
+config       108.00 KiB
+local         72.00 KiB
+mydb          40.00 KiB
+school        72.00 KiB
+session1_db  112.00 KiB
+test> use mydb
+switched to db mydb
+mydb> show collections
+products
+mydb> db.books.insertMany([{name:"A",price:1},{name:"B",price:2},{name:"C",price:3}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('662c0f5fffe7b331ba46b799'),
+    '1': ObjectId('662c0f5fffe7b331ba46b79a'),
+    '2': ObjectId('662c0f5fffe7b331ba46b79b')
+  }
+}
+mydb> db.books.find()
+[
+  { _id: ObjectId('662c0f5fffe7b331ba46b799'), name: 'A', price: 1 },
+  { _id: ObjectId('662c0f5fffe7b331ba46b79a'), name: 'B', price: 2 },
+  { _id: ObjectId('662c0f5fffe7b331ba46b79b'), name: 'C', price: 3 }
+]
+mydb> db.books.deleteMany()
+MongoshInvalidInputError: [COMMON-10001] Missing required argument at position 0 (Collection.deleteMany)
+mydb> db.books.deleteMany({})
+{ acknowledged: true, deletedCount: 3 }
+mydb> db.books.insertMany([{_id:"A",name:"A",price:1},{_id:"B",name:"B",price:2},{_id:"C",name:"C",price:3}])
+{ acknowledged: true, insertedIds: { '0': 'A', '1': 'B', '2': 'C' } }
+mydb> db.books.find()
+[
+  { _id: 'A', name: 'A', price: 1 },
+  { _id: 'B', name: 'B', price: 2 },
+  { _id: 'C', name: 'C', price: 3 }
+]
+mydb> db.books.insertMany([{_id:"A",name:"A",price:1},{_id:"B",name:"B",price:2},{_id:"C",name:"C",price:3}])
+Uncaught:
+MongoBulkWriteError: E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "A" }
+Result: BulkWriteResult {
+  insertedCount: 0,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: {}
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 0,
+      code: 11000,
+      errmsg: 'E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "A" }',
+      errInfo: undefined,
+      op: { _id: 'A', name: 'A', price: 1 }
+    }
+  }
+]
+mydb> db.books.insertMany([{_id:"D",name:"D",price:1},{_id:"B",name:"B",price:2},{_id:"F",name:"F",price:3}])
+Uncaught:
+MongoBulkWriteError: E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "B" }
+Result: BulkWriteResult {
+  insertedCount: 1,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: { '0': 'D' }
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 1,
+      code: 11000,
+      errmsg: 'E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "B" }',
+      errInfo: undefined,
+      op: { _id: 'B', name: 'B', price: 2 }
+    }
+  }
+]
+mydb> db.books.find()
+[
+  { _id: 'A', name: 'A', price: 1 },
+  { _id: 'B', name: 'B', price: 2 },
+  { _id: 'C', name: 'C', price: 3 },
+  { _id: 'D', name: 'D', price: 1 }
+]
+mydb> //here records are inserted in serial manner synchronously
+
+mydb> db.books.insertMany([{_id:"DD",name:"DD",price:1},{_id:"B",name:"B",price:2},{_id:"F",name:"F",price:3}],{ordered:false})
+Uncaught:
+MongoBulkWriteError: E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "B" }
+Result: BulkWriteResult {
+  insertedCount: 2,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: { '0': 'DD', '2': 'F' }
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 1,
+      code: 11000,
+      errmsg: 'E11000 duplicate key error collection: mydb.books index: _id_ dup key: { _id: "B" }',
+      errInfo: undefined,
+      op: { _id: 'B', name: 'B', price: 2 }
+    }
+  }
+]
+mydb> db.books.find()
+[
+  { _id: 'A', name: 'A', price: 1 },
+  { _id: 'B', name: 'B', price: 2 },
+  { _id: 'C', name: 'C', price: 3 },
+  { _id: 'D', name: 'D', price: 1 },
+  { _id: 'DD', name: 'DD', price: 1 },
+  { _id: 'F', name: 'F', price: 3 }
+]
+mydb> show collections
+books
+products
+mydb> use hooks
+switched to db hooks
+hooks> db.nonfiction
+hooks.nonfiction
+hooks> db.createCollection("nonfiction")
+{ ok: 1 }
+hooks> show collections
+nonfiction
+hooks> db.nonfiction.insertOne({name:123})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662c121effe7b331ba46b79c')
+}
+hooks> db.nonfiction.insertOne({name:'ABC'})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662c1223ffe7b331ba46b79d')
+}
+hooks> db.nonfiction.find()
+[
+  { _id: ObjectId('662c121effe7b331ba46b79c'), name: 123 },
+  { _id: ObjectId('662c1223ffe7b331ba46b79d'), name: 'ABC' }
+]
+hooks> db.nonfiction.drop()
+true
+hooks> show collections
+
+hooks> db.createCollection("nonfiction", {
+...     validator: {
+...         $jsonSchema: {
+...             required: ["name", "price"],
+...             properties: {
+...                 name: {
+...                     bsonType: 'string',
+...                     description:'must be a string and required'
+...                 },
+...                 price: {
+...                     bsonType: 'number',
+...                     description:'must be a number and required'
+...                 }
+...             }
+...         }
+...   },
+...     validationAction: "error", //default value
+... });
+{ ok: 1 }
+hooks> db.nonfiction.insert({name:"Way of a Man"})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+Uncaught:
+MongoBulkWriteError: Document failed validation
+Result: BulkWriteResult {
+  insertedCount: 0,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: {}
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 0,
+      code: 121,
+      errmsg: 'Document failed validation',
+      errInfo: {
+        failingDocumentId: ObjectId('662c1396ffe7b331ba46b79e'),
+        details: {
+          operatorName: '$jsonSchema',
+          schemaRulesNotSatisfied: [
+            {
+              operatorName: 'required',
+              specifiedAs: { required: [ 'name', 'price' ] },
+              missingProperties: [ 'price' ]
+            }
+          ]
+        }
+      },
+      op: {
+        name: 'Way of a Man',
+        _id: ObjectId('662c1396ffe7b331ba46b79e')
+      }
+    }
+  }
+]
+hooks> db.nonfiction.insert({name:"Way of a Man",price:"2900"})
+Uncaught:
+MongoBulkWriteError: Document failed validation
+Result: BulkWriteResult {
+  insertedCount: 0,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: {}
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 0,
+      code: 121,
+      errmsg: 'Document failed validation',
+      errInfo: {
+        failingDocumentId: ObjectId('662c13aeffe7b331ba46b79f'),
+        details: {
+          operatorName: '$jsonSchema',
+          schemaRulesNotSatisfied: [
+            {
+              operatorName: 'properties',
+              propertiesNotSatisfied: [
+                {
+                  propertyName: 'price',
+                  description: 'must be a number and required',
+                  details: [
+                    {
+                      operatorName: 'bsonType',
+                      specifiedAs: { bsonType: 'number' },
+                      reason: 'type did not match',
+                      consideredValue: '2900',
+                      consideredType: 'string'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      op: {
+        name: 'Way of a Man',
+        price: '2900',
+        _id: ObjectId('662c13aeffe7b331ba46b79f')
+      }
+    }
+  }
+]
+hooks> db.nonfiction.insert({name:"Way of a Man",price:2900})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c13b2ffe7b331ba46b7a0') }
+}
+hooks> db.nonfiction.insert({name:"Way of Man",price:1900,author:"ABC"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c13c8ffe7b331ba46b7a1') }
+}
+hooks> db.nonfiction.find()
+[
+  {
+    _id: ObjectId('662c13b2ffe7b331ba46b7a0'),
+    name: 'Way of a Man',
+    price: 2900
+  },
+  {
+    _id: ObjectId('662c13c8ffe7b331ba46b7a1'),
+    name: 'Way of Man',
+    price: 1900,
+    author: 'ABC'
+  }
+]
+hooks> db.runCommand({
+...   collMod: "nonfiction",
+...   validator: {
+...     $jsonSchema: {
+...       required: ["name", "price", "author"],
+...       properties: {
+...         name: {
+...           bsonType: "string",
+...           description: "must be a string and required",
+...         },
+...         price: {
+...           bsonType: "number",
+...           description: "must be a number and required",
+...         },
+...         authors: {
+...           bsonType: "array",
+...           description: "must be an array and is required",
+...           items: {
+...             bsonType: "object",
+...             required: ["name", "email"],
+...             properties: {
+...               name: {
+...                 bsonType: "string",
+...                 description: "must be a string & required",
+...               },
+...               email: {
+...                 bson: "string",
+...                 description: "must be a string and required",
+...               },
+...             },
+...           },
+...         },
+...       },
+...     },
+...     },
+...   validationAction:"warn"
+... });
+MongoServerError[FailedToParse]: Parsing of collection validator failed :: caused by :: Unknown $jsonSchema keyword: bson
+hooks> db.runCommand({
+...   collMod: "nonfiction",
+...   validator: {
+...     $jsonSchema: {
+...       required: ["name", "price", "author"],
+...       properties: {
+...         name: {
+...           bsonType: "string",
+...           description: "must be a string and required",
+...         },
+...         price: {
+...           bsonType: "number",
+...           description: "must be a number and required",
+...         },
+...         authors: {
+...           bsonType: "array",
+...           description: "must be an array and is required",
+...           items: {
+...             bsonType: "object",
+...             required: ["name", "email"],
+...             properties: {
+...               name: {
+...                 bsonType: "string",
+...                 description: "must be a string & required",
+...               },
+...               email: {
+...                 bsonType: "string",
+...                 description: "must be a string and required",
+...               },
+...             },
+...           },
+...         },
+...       },
+...     },
+...   },
+...   validationAction: "warn",
+... });
+{ ok: 1 }
+hooks> db.nonfiction.insert({name:"Way of Man",price:1900,author:"ABC"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c1620ffe7b331ba46b7a2') }
+}
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,author:"ABC"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c1655ffe7b331ba46b7a3') }
+}
+hooks> db.runCommand({
+...   collMod: "nonfiction",
+...   validator: {
+...     $jsonSchema: {
+...       required: ["name", "price", "author"],
+...       properties: {
+...         name: {
+...           bsonType: "string",
+...           description: "must be a string and required",
+...         },
+...         price: {
+...           bsonType: "number",
+...           description: "must be a number and required",
+...         },
+...         authors: {
+...           bsonType: "array",
+...           description: "must be an array and is required",
+...           items: {
+...             bsonType: "object",
+...             required: ["name", "email"],
+...             properties: {
+...               name: {
+...                 bsonType: "string",
+...                 description: "must be a string & required",
+...               },
+...               email: {
+...                 bsonType: "string",
+...                 description: "must be a string and required",
+...               },
+...             },
+...           },
+...         },
+...       },
+...     },
+...   },
+...   validationAction: "warn",
+... });
+{ ok: 1 }
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,authors:"ABC"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c1671ffe7b331ba46b7a4') }
+}
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,authors:"ABC"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c169fffe7b331ba46b7a5') }
+}
+hooks> db.runCommand({
+...   collMod: "nonfiction",
+...   validator: {
+...     $jsonSchema: {
+...       required: ["name", "price", "author"],
+...       properties: {
+...         name: {
+...           bsonType: "string",
+...           description: "must be a string and required",
+...         },
+...         price: {
+...           bsonType: "number",
+...           description: "must be a number and required",
+...         },
+...         authors: {
+...           bsonType: "array",
+...           description: "must be an array and is required",
+...           items: {
+...             bsonType: "object",
+...             required: ["name", "email"],
+...             properties: {
+...               name: {
+...                 bsonType: "string",
+...                 description: "must be a string & required",
+...               },
+...               email: {
+...                 bsonType: "string",
+...                 description: "must be a string and required",
+...               },
+...             },
+...           },
+...         },
+...       },
+...     },
+...   },
+...   validationAction: "error",
+... });
+{ ok: 1 }
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,authors:"ABC"})
+Uncaught:
+MongoBulkWriteError: Document failed validation
+Result: BulkWriteResult {
+  insertedCount: 0,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: {}
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 0,
+      code: 121,
+      errmsg: 'Document failed validation',
+      errInfo: {
+        failingDocumentId: ObjectId('662c641bffe7b331ba46b7a6'),
+        details: {
+          operatorName: '$jsonSchema',
+          schemaRulesNotSatisfied: [
+            {
+              operatorName: 'properties',
+              propertiesNotSatisfied: [
+                {
+                  propertyName: 'authors',
+                  description: 'must be an array and is required',
+                  details: [
+                    {
+                      operatorName: 'bsonType',
+                      specifiedAs: { bsonType: 'array' },
+                      reason: 'type did not match',
+                      consideredValue: 'ABC',
+                      consideredType: 'string'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              operatorName: 'required',
+              specifiedAs: { required: [ 'name', 'price', 'author' ] },
+              missingProperties: [ 'author' ]
+            }
+          ]
+        }
+      },
+      op: {
+        name: "Can't hurt me",
+        price: 1900.9,
+        authors: 'ABC',
+        _id: ObjectId('662c641bffe7b331ba46b7a6')
+      }
+    }
+  }
+]
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,author:"ABC"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c642dffe7b331ba46b7a7') }
+}
+hooks> db.runCommand({
+...   collMod: "nonfiction",
+...   validator: {
+...     $jsonSchema: {
+...       required: ["name", "price", "authors"],
+hooks>
+...         name: {
+...           bsonType: "string",
+...           description: "must be a string and required",
+...         },
+...         price: {
+...           bsonType: "number",
+...           description: "must be a number and required",
+...         },
+...         authors: {
+...           bsonType: "array",
+...           description: "must be an array and is required",
+...           items: {
+...             bsonType: "object",
+...             required: ["name", "email"],
+...             properties: {
+...               name: {
+...                 bsonType: "string",
+...                 description: "must be a string & required",
+...               },
+...               email: {
+...                 bsonType: "string",
+...                 description: "must be a string and required",
+...               },
+...             },
+...           },
+...         },
+...       },
+...     },
+...   },
+...   validationAction: "error",
+... });
+{ ok: 1 }
+hooks>
+
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,author:"ABC"})
+Uncaught:
+MongoBulkWriteError: Document failed validation
+Result: BulkWriteResult {
+  insertedCount: 0,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: {}
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 0,
+      code: 121,
+      errmsg: 'Document failed validation',
+      errInfo: {
+        failingDocumentId: ObjectId('662c6458ffe7b331ba46b7a8'),
+        details: {
+          operatorName: '$jsonSchema',
+          schemaRulesNotSatisfied: [
+            {
+              operatorName: 'required',
+              specifiedAs: { required: [ 'name', 'price', 'authors' ] },
+              missingProperties: [ 'authors' ]
+            }
+          ]
+        }
+      },
+      op: {
+        name: "Can't hurt me",
+        price: 1900.9,
+        author: 'ABC',
+        _id: ObjectId('662c6458ffe7b331ba46b7a8')
+      }
+    }
+  }
+]
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,authors:"ABC"})
+Uncaught:
+MongoBulkWriteError: Document failed validation
+Result: BulkWriteResult {
+  insertedCount: 0,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: {}
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 0,
+      code: 121,
+      errmsg: 'Document failed validation',
+      errInfo: {
+        failingDocumentId: ObjectId('662c6460ffe7b331ba46b7a9'),
+        details: {
+          operatorName: '$jsonSchema',
+          schemaRulesNotSatisfied: [
+            {
+              operatorName: 'properties',
+              propertiesNotSatisfied: [
+                {
+                  propertyName: 'authors',
+                  description: 'must be an array and is required',
+                  details: [
+                    {
+                      operatorName: 'bsonType',
+                      specifiedAs: { bsonType: 'array' },
+                      reason: 'type did not match',
+                      consideredValue: 'ABC',
+                      consideredType: 'string'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      op: {
+        name: "Can't hurt me",
+        price: 1900.9,
+        authors: 'ABC',
+        _id: ObjectId('662c6460ffe7b331ba46b7a9')
+      }
+    }
+  }
+]
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,authors:["ABC"]})
+Uncaught:
+MongoBulkWriteError: Document failed validation
+Result: BulkWriteResult {
+  insertedCount: 0,
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: {}
+}
+Write Errors: [
+  WriteError {
+    err: {
+      index: 0,
+      code: 121,
+      errmsg: 'Document failed validation',
+      errInfo: {
+        failingDocumentId: ObjectId('662c6466ffe7b331ba46b7aa'),
+        details: {
+          operatorName: '$jsonSchema',
+          schemaRulesNotSatisfied: [
+            {
+              operatorName: 'properties',
+              propertiesNotSatisfied: [
+                {
+                  propertyName: 'authors',
+                  description: 'must be an array and is required',
+                  details: [
+                    {
+                      operatorName: 'items',
+                      reason: 'At least one item did not match the sub-schema',
+                      itemIndex: 0,
+                      details: [
+                        {
+                          operatorName: 'bsonType',
+                          specifiedAs: { bsonType: 'object' },
+                          reason: 'type did not match',
+                          consideredValue: 'ABC',
+                          consideredType: 'string'
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      op: {
+        name: "Can't hurt me",
+        price: 1900.9,
+        authors: [ 'ABC' ],
+        _id: ObjectId('662c6466ffe7b331ba46b7aa')
+      }
+    }
+  }
+]
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,authors:[{name:"ABC",email:""abc@gmail.com}]})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:86)
+
+> 1 | db.nonfiction.insert({name:"Can't hurt me",price:1900.90,authors:[{name:"ABC",email:""abc@gmail.com}]})
+    |                                                                                       ^  2 |
+
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,authors:[{name:"ABC",email:"abc@gmail.com"}]})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c6484ffe7b331ba46b7ab') }
+}
+hooks> db.nonfiction.find()
+[
+  {
+    _id: ObjectId('662c13b2ffe7b331ba46b7a0'),
+    name: 'Way of a Man',
+    price: 2900
+  },
+  {
+    _id: ObjectId('662c13c8ffe7b331ba46b7a1'),
+    name: 'Way of Man',
+    price: 1900,
+    author: 'ABC'
+  },
+  {
+    _id: ObjectId('662c1620ffe7b331ba46b7a2'),
+    name: 'Way of Man',
+    price: 1900,
+    author: 'ABC'
+  },
+  {
+    _id: ObjectId('662c1655ffe7b331ba46b7a3'),
+    name: "Can't hurt me",
+    price: 1900.9,
+    author: 'ABC'
+  },
+  {
+    _id: ObjectId('662c1671ffe7b331ba46b7a4'),
+    name: "Can't hurt me",
+    price: 1900.9,
+    authors: 'ABC'
+  },
+  {
+    _id: ObjectId('662c169fffe7b331ba46b7a5'),
+    name: "Can't hurt me",
+    price: 1900.9,
+    authors: 'ABC'
+  },
+  {
+    _id: ObjectId('662c642dffe7b331ba46b7a7'),
+    name: "Can't hurt me",
+    price: 1900.9,
+    author: 'ABC'
+  },
+  {
+    _id: ObjectId('662c6484ffe7b331ba46b7ab'),
+    name: "Can't hurt me",
+    price: 1900.9,
+    authors: [ { name: 'ABC', email: 'abc@gmail.com' } ]
+  }
+]
+hooks> db.deleteMany({authours:null}).count()
+TypeError: db.deleteMany is not a function
+hooks> db.delete({authours:null}).count()
+TypeError: db.delete is not a function
+hooks> db.nonfiction.deleteMany({authours:null}).count()
+TypeError: db.nonfiction. ... null}).count is not a function
+hooks> db.nonfiction.delete({authours:null}).count()
+TypeError: db.nonfiction.delete is not a function
+hooks> db.nonfiction.delete({authours:null})
+TypeError: db.nonfiction.delete is not a function
+hooks> db.nonfiction.deleteMany({authours:null})
+{ acknowledged: true, deletedCount: 0 }
+hooks> db.nonfiction.deleteMany({authors:null})
+{ acknowledged: true, deletedCount: 0 }
+hooks> db.nonfiction.deleteMany({authors:{$size:0}})
+{ acknowledged: true, deletedCount: 0 }
+hooks> db.nonfiction.deleteMany({authors:'ABC', author:'ABC'})
+{ acknowledged: true, deletedCount: 0 }
+hooks>
+
+hooks> db.nonfiction.deleteMany({author:'ABC'})
+{ acknowledged: true, deletedCount: 0 }
+hooks>
+
+hooks>
+
+hooks> db.nonfiction.find()
+
+hooks> db.nonfiction.find()
+
+hooks> db.nonfiction.find().count()
+0
+hooks> db.nonfiction.insert({name:"Can't hurt me",price:1900.90,authors:[{name:"ABC",email:"abc@gmail.com"}]})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('662c65ddffe7b331ba46b7ac') }
+}
+hooks> db.nonfiction.find().count()
+1
+hooks> db.nonfiction.find()
+[
+  {
+    _id: ObjectId('662c65ddffe7b331ba46b7ac'),
+    name: "Can't hurt me",
+    price: 1900.9,
+    authors: [ { name: 'ABC', email: 'abc@gmail.com' } ]
+  }
+]
+hooks>

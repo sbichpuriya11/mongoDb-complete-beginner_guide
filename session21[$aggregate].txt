@@ -1,0 +1,6082 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb://localhost:27017
+mongodb://localhost:27017
+Current Mongosh Log ID: 662f152176f768a35946b798
+Connecting to:          mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.5
+Using MongoDB:          7.0.8
+Using Mongosh:          2.2.5
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-04-28T23:08:50.451+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use school
+switched to db school
+school> db.students.find()
+[
+  {
+    _id: ObjectId('662c0595bc4e4460df46b79a'),
+    name: 'Aarav Patel',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c059bbc4e4460df46b79b'),
+    name: 'Aarav Patel',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c059fbc4e4460df46b79c'),
+    name: 'Ishita Sharma',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 10
+  },
+  {
+    _id: ObjectId('662c05a4bc4e4460df46b79d'),
+    name: 'Advik Singh',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 11
+  },
+  {
+    _id: ObjectId('662c05a8bc4e4460df46b79e'),
+    name: 'Diya Shah',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c05aebc4e4460df46b79f'),
+    name: 'Arjun Gupta',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 13
+  },
+  {
+    _id: ObjectId('662c05b0bc4e4460df46b7a0'),
+    name: 'Ananya Reddy',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 11
+  },
+  {
+    _id: ObjectId('662c05b7bc4e4460df46b7a1'),
+    name: 'Vihaan Kumar',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 10
+  },
+  {
+    _id: ObjectId('662c05bbbc4e4460df46b7a2'),
+    name: 'Zoya Khan',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c05bebc4e4460df46b7a3'),
+    name: 'Ayaan Sharma',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 11
+  },
+  {
+    _id: ObjectId('662c05c2bc4e4460df46b7a4'),
+    name: 'Saanvi Patel',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c05c7bc4e4460df46b7a5'),
+    name: 'Kabir Singh',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 10
+  },
+  {
+    _id: ObjectId('662c05ccbc4e4460df46b7a6'),
+    name: 'Aisha Gupta',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 11
+  },
+  {
+    _id: ObjectId('662c05d3bc4e4460df46b7a7'),
+    name: 'Rehan Kapoor',
+    idCards: { hasAadhar: true, hasPanCard: false },
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c05d7bc4e4460df46b7a8'),
+    name: 'Anika Reddy',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 10
+  },
+  {
+    _id: ObjectId('662c05dabc4e4460df46b7a9'),
+    name: 'Dhruv Kumar',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 13
+  },
+  {
+    _id: ObjectId('662c05ddbc4e4460df46b7aa'),
+    name: 'Nitya Shah',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 11
+  },
+  {
+    _id: ObjectId('662c05e2bc4e4460df46b7ab'),
+    name: 'Yuvraj Singh',
+    idCards: { hasAadhar: true, hasPanCard: true },
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c05e4bc4e4460df46b7ac'),
+    name: 'Tanisha Patel',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 10
+  },
+  {
+    _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+    name: 'Aarush Sharma',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 23
+  }
+]
+Type "it" for more
+school> use ecommerece
+switched to db ecommerece
+ecommerece> db.orders.find()
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z'
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z'
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z'
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c8'),
+    user_id: '2',
+    username: 'user2',
+    orders: [
+      {
+        order_id: '1003',
+        product: 'Widget C',
+        quantity: 3,
+        price: 8.99,
+        timestamp: '2024-04-25T09:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z'
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z'
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z'
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z'
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z'
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z'
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z'
+      }
+    ]
+  }
+]
+ecommerece> db.orders.find({orders:{$elemMatch:{quantity:{$lte:2}}}})
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z'
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z'
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z'
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z'
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z'
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z'
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z'
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+ecommerece> db.orders.updateMany({orders:{$elemMatch:{quantity:{$lte:2}}}},{$set:{"orders:$.neglect":true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 14,
+  modifiedCount: 14,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find({orders:{$elemMatch:{quantity:{$lte:2}}}})
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z'
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z'
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z'
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z'
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z'
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z'
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z'
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z'
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z'
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  }
+]
+ecommerece> db.orders.updateMany({orders:{$elemMatch:{quantity:{$lte:2}}}},{$set:{"orders.$.neglect":true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 14,
+  modifiedCount: 14,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find({orders:{$elemMatch:{quantity:{$lte:2}}}})
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: true
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z'
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: true
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: true
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: true
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: true
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: true
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z'
+      }
+    ],
+    'orders:$': { neglect: true }
+  }
+]
+ecommerece> db.orders.updateMany({},{$unset:{"orders:$":''}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 15,
+  modifiedCount: 14,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find({orders:{$elemMatch:{quantity:{$lte:2}}}})
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z'
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z'
+      }
+    ]
+  }
+]
+ecommerece> db.orders.updateMany({orders:{$elemMatch:{quantity:{$lte:2}}}},{$set:{"orders.$[].neglect":1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 14,
+  modifiedCount: 14,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find({orders:{$elemMatch:{quantity:{$lte:2}}}})
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z',
+        neglect: 1
+      }
+    ]
+  }
+]
+ecommerece> db.orders.updateMany({orders:{$elemMatch:{quantity:{$lte:2}}}},{$set:{"orders.$[e].neglect":true}},{ArrayFilters:[{"e.quantity":{quantity:{$lte:2}}}]})
+MongoServerError: No array filter found for identifier 'e' in path 'orders.$[e].neglect'
+ecommerece> db.orders.updateMany({orders:{$elemMatch:{quantity:{$lte:2}}}},{$set:{"orders.$[e].neglect":true}},{arrayFilters:[{"e.quantity":{quantity:{$lte:2}}}]})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 14,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find({orders:{$elemMatch:{quantity:{$lte:2}}}})
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z',
+        neglect: 1
+      }
+    ]
+  }
+]
+ecommerece> db.orders.updateMany({orders:{$elemMatch:{quantity:{$lte:2}}}},{$set:{"orders.$[e].neglect":true}},{arrayFilters:[{"e.quantity":{$lte:2}}]})
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 14,
+  modifiedCount: 14,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find({orders:{$elemMatch:{quantity:{$lte:2}}}})
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z',
+        neglect: 1
+      }
+    ]
+  }
+]
+ecommerece> db.orders.updateOne({user_id:'6',username:'user6'},{$push:{orders:{order_id:'19002',product:"Nestle Chocolate",quantity:100,timeStamp:new Date()}}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find()
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c8'),
+    user_id: '2',
+    username: 'user2',
+    orders: [
+      {
+        order_id: '1003',
+        product: 'Widget C',
+        quantity: 3,
+        price: 8.99,
+        timestamp: '2024-04-25T09:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '19002',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('2024-04-29T04:09:29.021Z')
+      }
+    ]
+  }
+]
+ecommerece> db.orders.updateOne({user_id:'6',username:'user6'},{$push:{orders:{order_id:'19004',product:"Nestle Chocolate",quantity:100,timeStamp:new Date().toLocalstring()}}})
+TypeError: new Date().toLocalstring is not a function
+ecommerece> db.orders.updateOne({user_id:'6',username:'user6'},{$push:{orders:{order_id:'19004',product:"Nestle Chocolate",quantity:100,timeStamp:new Date().toLocalString()}}})
+TypeError: new Date().toLocalString is not a function
+ecommerece> db.orders.updateOne({user_id:'6',username:'user6'},{$push:{orders:{order_id:'19004',product:"Nestle Chocolate",quantity:100,timeStamp:new Date(Date.now().toString())}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:167)
+
+> 1 | db.orders.updateOne({user_id:'6',username:'user6'},{$push:{orders:{order_id:'19004',product:"Nestle Chocolate",quantity:100,timeStamp:new Date(Date.now().toString())}})
+    |
+
+                     ^
+  2 |
+
+ecommerece> db.orders.updateOne({user_id:'6',username:'user6'},{$push:{orders:{order_id:'19004',product:"Nestle Chocolate",quantity:100,timeStamp:new Date(Date.now())}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:156)
+
+> 1 | db.orders.updateOne({user_id:'6',username:'user6'},{$push:{orders:{order_id:'19004',product:"Nestle Chocolate",quantity:100,timeStamp:new Date(Date.now())}})
+    |
+
+          ^
+  2 |
+
+ecommerece> db.orders.updateOne(
+...     { user_id: '6', username: 'user6' },
+...     {
+...         $push:
+...         {
+...             orders:
+...             {
+...                 order_id: '19004',
+...                 product: "Nestle Chocolate",
+...                 quantity: 100,
+...                 timeStamp: new Date(Date.now())
+...             }
+...         }
+...     })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find()
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c8'),
+    user_id: '2',
+    username: 'user2',
+    orders: [
+      {
+        order_id: '1003',
+        product: 'Widget C',
+        quantity: 3,
+        price: 8.99,
+        timestamp: '2024-04-25T09:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '19002',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('2024-04-29T04:09:29.021Z')
+      },
+      {
+        order_id: '19004',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('2024-04-29T04:12:46.167Z')
+      }
+    ]
+  }
+]
+ecommerece> db.orders.updateOne({user_id:'6',username:'user6'},{$push:{orders:{order_id:'19004',product:"Nestle Chocolate",quantity:100,timeStamp:new Date(Date.now().toString())}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:167)
+
+> 1 | db.orders.updateOne({user_id:'6',username:'user6'},{$push:{orders:{order_id:'19004',product:"Nestle Chocolate",quantity:100,timeStamp:new Date(Date.now().toString())}})
+    |
+
+                     ^
+  2 |
+
+ecommerece>  db.orders.updateOne(
+...     { user_id: '6', username: 'user6' },
+...     {
+...         $push:
+...         {
+...             orders:
+...             {
+...                 order_id: '19004',
+...                 product: "Nestle Chocolate",
+...                 quantity: 100,
+...                 timeStamp: new Date(Date.now().toString())
+...             }
+...         }
+...     })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find()
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c8'),
+    user_id: '2',
+    username: 'user2',
+    orders: [
+      {
+        order_id: '1003',
+        product: 'Widget C',
+        quantity: 3,
+        price: 8.99,
+        timestamp: '2024-04-25T09:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '19002',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('2024-04-29T04:09:29.021Z')
+      },
+      {
+        order_id: '19004',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('2024-04-29T04:12:46.167Z')
+      },
+      {
+        order_id: '19004',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('1970-01-01T00:00:00.000Z')
+      }
+    ]
+  }
+]
+ecommerece> db.orders.updateOne(
+...     { user_id: '6', username: 'user6' },
+...     {
+...         $push:
+...         {
+...             orders:
+...             {
+...                 order_id: '19004',
+...                 product: "Nestle Chocolate",
+...                 quantity: 100,
+...                 timeStamp: new Date(Date.now()).toISOString()
+...             }
+...         }
+...     })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find()
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c8'),
+    user_id: '2',
+    username: 'user2',
+    orders: [
+      {
+        order_id: '1003',
+        product: 'Widget C',
+        quantity: 3,
+        price: 8.99,
+        timestamp: '2024-04-25T09:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '19002',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('2024-04-29T04:09:29.021Z')
+      },
+      {
+        order_id: '19004',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('2024-04-29T04:12:46.167Z')
+      },
+      {
+        order_id: '19004',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('1970-01-01T00:00:00.000Z')
+      },
+      {
+        order_id: '19004',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: '2024-04-29T04:14:33.581Z'
+      }
+    ]
+  }
+]
+ecommerece> db.orders.updateOne( { user_id: '6', username: 'user6' }, { $addToSet: { orders: { order_id: '19004', product: "Nestle Chocolate", quantity: 100, timeStamp: new Date(Date.now()).toISOString() } } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find()
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c8'),
+    user_id: '2',
+    username: 'user2',
+    orders: [
+      {
+        order_id: '1003',
+        product: 'Widget C',
+        quantity: 3,
+        price: 8.99,
+        timestamp: '2024-04-25T09:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '19002',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('2024-04-29T04:09:29.021Z')
+      },
+      {
+        order_id: '19004',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('2024-04-29T04:12:46.167Z')
+      },
+      {
+        order_id: '19004',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('1970-01-01T00:00:00.000Z')
+      },
+      {
+        order_id: '19004',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: '2024-04-29T04:14:33.581Z'
+      },
+      {
+        order_id: '19004',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: '2024-04-29T04:14:55.702Z'
+      }
+    ]
+  }
+]
+ecommerece> //add to set will not set object, if there is already same objec
+t
+
+ecommerece> db.orders.updateOne( { user_id: '6', username: 'user6' }, { $pull: { orders: { order_id: '19004', product: "Nestle Chocolate", quantity: 100, timeStamp: new Date(Date.now()).toISOString() } } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+ecommerece> db.orders.updateOne( { user_id: '6', username: 'user6' }, { $pull: { orders: { order_id: '19004', product: "Nestle Chocolate"} } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ecommerece> db.orders.updateOne( { user_id: '6', username: 'user6' }, { $pull: { orders: { order_id: '19004', product: "Nestle Chocolate"} } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find()
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c8'),
+    user_id: '2',
+    username: 'user2',
+    orders: [
+      {
+        order_id: '1003',
+        product: 'Widget C',
+        quantity: 3,
+        price: 8.99,
+        timestamp: '2024-04-25T09:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '19002',
+        product: 'Nestle Chocolate',
+        quantity: 100,
+        timeStamp: ISODate('2024-04-29T04:09:29.021Z')
+      }
+    ]
+  }
+]
+ecommerece> db.orders.updateOne( { user_id: '6', username: 'user6' }, { $pull: { orders: { order_id: '19002', product: "Nestle Chocolate"} } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ecommerece> db.orders.find()
+[
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c4'),
+    user_id: '7',
+    username: 'user7',
+    orders: [
+      {
+        order_id: '1011',
+        product: 'Widget I',
+        quantity: 2,
+        price: 12.99,
+        timestamp: '2024-04-17T10:30:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1012',
+        product: 'Widget J',
+        quantity: 1,
+        price: 14.99,
+        timestamp: '2024-04-16T09:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c5'),
+    user_id: '9',
+    username: 'user9',
+    orders: [
+      {
+        order_id: '1014',
+        product: 'Widget L',
+        quantity: 1,
+        price: 19.99,
+        timestamp: '2024-04-14T14:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c6'),
+    user_id: '4',
+    username: 'user4',
+    orders: [
+      {
+        order_id: '1006',
+        product: 'Widget D',
+        quantity: 1,
+        price: 20.99,
+        timestamp: '2024-04-22T14:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1007',
+        product: 'Widget E',
+        quantity: 1,
+        price: 25.99,
+        timestamp: '2024-04-21T11:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c7'),
+    user_id: '1',
+    username: 'user1',
+    orders: [
+      {
+        order_id: '1001',
+        product: 'Widget A',
+        quantity: 2,
+        price: 10.99,
+        timestamp: '2024-04-27T10:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1002',
+        product: 'Widget B',
+        quantity: 1,
+        price: 15.49,
+        timestamp: '2024-04-26T15:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c8'),
+    user_id: '2',
+    username: 'user2',
+    orders: [
+      {
+        order_id: '1003',
+        product: 'Widget C',
+        quantity: 3,
+        price: 8.99,
+        timestamp: '2024-04-25T09:45:00Z'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9c9'),
+    user_id: '10',
+    username: 'user10',
+    orders: [
+      {
+        order_id: '1015',
+        product: 'Widget M',
+        quantity: 3,
+        price: 24.99,
+        timestamp: '2024-04-13T16:30:00Z',
+        neglect: 1
+      },
+      {
+        order_id: '1016',
+        product: 'Widget N',
+        quantity: 1,
+        price: 28.49,
+        timestamp: '2024-04-12T11:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ca'),
+    user_id: '11',
+    username: 'user11',
+    orders: [
+      {
+        order_id: '1017',
+        product: 'Widget O',
+        quantity: 2,
+        price: 26.99,
+        timestamp: '2024-04-11T09:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cb'),
+    user_id: '12',
+    username: 'user12',
+    orders: [
+      {
+        order_id: '1018',
+        product: 'Widget P',
+        quantity: 1,
+        price: 32.99,
+        timestamp: '2024-04-10T14:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1019',
+        product: 'Widget Q',
+        quantity: 2,
+        price: 35.49,
+        timestamp: '2024-04-09T16:10:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cc'),
+    user_id: '5',
+    username: 'user5',
+    orders: [
+      {
+        order_id: '1008',
+        product: 'Widget F',
+        quantity: 2,
+        price: 18.99,
+        timestamp: '2024-04-20T08:45:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cd'),
+    user_id: '8',
+    username: 'user8',
+    orders: [
+      {
+        order_id: '1013',
+        product: 'Widget K',
+        quantity: 2,
+        price: 16.99,
+        timestamp: '2024-04-15T12:00:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9ce'),
+    user_id: '3',
+    username: 'user3',
+    orders: [
+      {
+        order_id: '1004',
+        product: 'Widget A',
+        quantity: 1,
+        price: 10.99,
+        timestamp: '2024-04-24T12:15:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1005',
+        product: 'Widget B',
+        quantity: 2,
+        price: 15.49,
+        timestamp: '2024-04-23T16:20:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9cf'),
+    user_id: '14',
+    username: 'user14',
+    orders: [
+      {
+        order_id: '1022',
+        product: 'Widget T',
+        quantity: 2,
+        price: 30.99,
+        timestamp: '2024-04-06T14:15:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d0'),
+    user_id: '13',
+    username: 'user13',
+    orders: [
+      {
+        order_id: '1020',
+        product: 'Widget R',
+        quantity: 1,
+        price: 28.99,
+        timestamp: '2024-04-08T10:45:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1021',
+        product: 'Widget S',
+        quantity: 1,
+        price: 32.49,
+        timestamp: '2024-04-07T12:30:00Z',
+        neglect: true
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+    user_id: '15',
+    username: 'user15',
+    orders: [
+      {
+        order_id: '1023',
+        product: 'Widget U',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-05T11:00:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1024',
+        product: 'Widget V',
+        quantity: 3,
+        price: 40.49,
+        timestamp: '2024-04-04T09:30:00Z',
+        neglect: 1
+      }
+    ]
+  },
+  {
+    _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+    user_id: '6',
+    username: 'user6',
+    orders: [
+      {
+        order_id: '1009',
+        product: 'Widget G',
+        quantity: 1,
+        price: 22.99,
+        timestamp: '2024-04-19T13:20:00Z',
+        neglect: true
+      },
+      {
+        order_id: '1010',
+        product: 'Widget H',
+        quantity: 3,
+        price: 30.49,
+        timestamp: '2024-04-18T17:10:00Z',
+        neglect: 1
+      }
+    ]
+  }
+]
+ecommerece> db.orders.update({name:"user6"},{$pull:{orders:{order_id:'1010',product:'Widget H'}}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+ecommerece> db.orders.update({username:"user6"},{$pull:{orders:{order_id:'1010',product:'Widget H'}}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ecommerece> db.orders.findOne({username:"user6"})
+{
+  _id: ObjectId('662cfb2431b97ce4a052a9d2'),
+  user_id: '6',
+  username: 'user6',
+  orders: [
+    {
+      order_id: '1009',
+      product: 'Widget G',
+      quantity: 1,
+      price: 22.99,
+      timestamp: '2024-04-19T13:20:00Z',
+      neglect: true
+    }
+  ]
+}
+ecommerece> db.orders.findOne({username:"user15"})
+{
+  _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+  user_id: '15',
+  username: 'user15',
+  orders: [
+    {
+      order_id: '1023',
+      product: 'Widget U',
+      quantity: 1,
+      price: 22.99,
+      timestamp: '2024-04-05T11:00:00Z',
+      neglect: true
+    },
+    {
+      order_id: '1024',
+      product: 'Widget V',
+      quantity: 3,
+      price: 40.49,
+      timestamp: '2024-04-04T09:30:00Z',
+      neglect: 1
+    }
+  ]
+}
+ecommerece> db.orders.update({username:"user15"},{$pop:{orders:2}})
+MongoServerError: $pop expects 1 or -1, found: 2
+ecommerece> db.orders.update({username:"user15"},{$pop:{orders:1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ecommerece> db.orders.findOne({username:"user15"})
+{
+  _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+  user_id: '15',
+  username: 'user15',
+  orders: [
+    {
+      order_id: '1023',
+      product: 'Widget U',
+      quantity: 1,
+      price: 22.99,
+      timestamp: '2024-04-05T11:00:00Z',
+      neglect: true
+    }
+  ]
+}
+ecommerece> db.orders.update({username:"user15"},{$pop:{orders:1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ecommerece> db.orders.findOne({username:"user15"})
+{
+  _id: ObjectId('662cfb2431b97ce4a052a9d1'),
+  user_id: '15',
+  username: 'user15',
+  orders: []
+}
+Please enter a MongoDB connection string (Default: mongodb://localhost/)
+Please enter a MongoDB connection string (Default: mongodb://localhosecommeecommereceecomecommerececommerece> ecommerece>
+ecommerece>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ecommerece>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece>
+
+ecommerece> use school
+switched to db school
+school> db.students.find()
+[
+  {
+    _id: ObjectId('662c0595bc4e4460df46b79a'),
+    name: 'Aarav Patel',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c059bbc4e4460df46b79b'),
+    name: 'Aarav Patel',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c059fbc4e4460df46b79c'),
+    name: 'Ishita Sharma',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 10
+  },
+  {
+    _id: ObjectId('662c05a4bc4e4460df46b79d'),
+    name: 'Advik Singh',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 11
+  },
+  {
+    _id: ObjectId('662c05a8bc4e4460df46b79e'),
+    name: 'Diya Shah',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c05aebc4e4460df46b79f'),
+    name: 'Arjun Gupta',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 13
+  },
+  {
+    _id: ObjectId('662c05b0bc4e4460df46b7a0'),
+    name: 'Ananya Reddy',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 11
+  },
+  {
+    _id: ObjectId('662c05b7bc4e4460df46b7a1'),
+    name: 'Vihaan Kumar',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 10
+  },
+  {
+    _id: ObjectId('662c05bbbc4e4460df46b7a2'),
+    name: 'Zoya Khan',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c05bebc4e4460df46b7a3'),
+    name: 'Ayaan Sharma',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 11
+  },
+  {
+    _id: ObjectId('662c05c2bc4e4460df46b7a4'),
+    name: 'Saanvi Patel',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c05c7bc4e4460df46b7a5'),
+    name: 'Kabir Singh',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 10
+  },
+  {
+    _id: ObjectId('662c05ccbc4e4460df46b7a6'),
+    name: 'Aisha Gupta',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 11
+  },
+  {
+    _id: ObjectId('662c05d3bc4e4460df46b7a7'),
+    name: 'Rehan Kapoor',
+    idCards: { hasAadhar: true, hasPanCard: false },
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c05d7bc4e4460df46b7a8'),
+    name: 'Anika Reddy',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 10
+  },
+  {
+    _id: ObjectId('662c05dabc4e4460df46b7a9'),
+    name: 'Dhruv Kumar',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 13
+  },
+  {
+    _id: ObjectId('662c05ddbc4e4460df46b7aa'),
+    name: 'Nitya Shah',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 11
+  },
+  {
+    _id: ObjectId('662c05e2bc4e4460df46b7ab'),
+    name: 'Yuvraj Singh',
+    idCards: { hasAadhar: true, hasPanCard: true },
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 12
+  },
+  {
+    _id: ObjectId('662c05e4bc4e4460df46b7ac'),
+    name: 'Tanisha Patel',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 10
+  },
+  {
+    _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+    name: 'Aarush Sharma',
+    hobbies: [ 'Anime', 'Cooking' ],
+    age: 23
+  }
+]
+Type "it" for more
+school> drop collection students
+Uncaught:
+SyntaxError: Missing semicolon. (1:4)
+
+> 1 | drop collection students
+    |     ^
+  2 |
+
+school> drop collection(students)
+Uncaught:
+SyntaxError: Missing semicolon. (1:4)
+
+> 1 | drop collection(students)
+    |     ^
+  2 |
+
+school> de
+debugger             default              delete
+
+Decimal128           DecompressionStream  decodeURI            decodeURIComponent
+
+school> delete collection(students)
+ReferenceError: collection is not defined
+school> delete students
+true
+school> show collections
+students
+school> db.students.drop()
+true
+school> show collections
+
+school> drop database (school)
+Uncaught:
+SyntaxError: Missing semicolon. (1:4)
+
+> 1 | drop database (school)
+    |     ^
+  2 |
+
+school> db.drop()
+TypeError: db.drop is not a function
+school> db.dropDatabase()
+{ ok: 1, dropped: 'school' }
+school> show dbs
+admin         40.00 KiB
+config       108.00 KiB
+ecommerece    56.00 KiB
+hooks         48.00 KiB
+local         72.00 KiB
+mydb         112.00 KiB
+products      72.00 KiB
+session1_db  112.00 KiB
+school> db.dropDatabase()
+{ ok: 1, dropped: 'school' }
+school> db.dropDatabase()
+{ ok: 1, dropped: 'school' }
+school> db.dropDatabase("session_1")
+{ ok: 1, dropped: 'school' }
+school> db.dropDatabase("session1_db")
+{ ok: 1, dropped: 'school' }
+school> use ecommerece
+switched to db ecommerece
+ecommerece> db.dropDatabase("")
+{ ok: 1, dropped: 'ecommerece' }
+ecommerece> use hooks
+switched to db hooks
+hooks> db.dropDatabase("")
+{ ok: 1, dropped: 'hooks' }
+hooks> use mydb
+switched to db mydb
+mydb> db.dropDatabase("")
+{ ok: 1, dropped: 'mydb' }
+mydb> use products
+switched to db products
+products> db.dropDatabase("")
+{ ok: 1, dropped: 'products' }
+products> use session1_db
+switched to db session1_db
+session1_db> db.dropDatabase("")
+{ ok: 1, dropped: 'session1_db' }
+session1_db> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db>
+
+session1_db> use test
+switched to db test
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test>
+
+test> use school
+switched to db school
+school> db.createCollection('students')
+{ ok: 1 }
+school> db.students.insertMany([
+...   { name: "Alice", age: 20, gender: "Female", weight: 55, hobbies: ["Reading", "Painting"], city: "New York", grade: "A" },
+...   { name: "Bob", age: 21, gender: "Male", weight: 65, hobbies: ["Sports", "Music"], city: "Los Angeles", grade: "B" },
+...   { name: "Charlie", age: 22, gender: "Male", weight: 70, hobbies: ["Cooking", "Traveling"], city: "Chicago", grade: "B+" },
+...   { name: "Diana", age: 19, gender: "Female", weight: 52, hobbies: ["Drawing", "Swimming"], city: "San Francisco", grade: "A-" },
+...   { name: "Emily", age: 20, gender: "Female", weight: 58, hobbies: ["Photography", "Dancing"], city: "Miami", grade: "A" },
+...   { name: "Frank", age: 21, gender: "Male", weight: 68, hobbies: ["Gaming", "Cooking"], city: "New York", grade: "B" },
+...   { name: "Grace", age: 22, gender: "Female", weight: 60, hobbies: ["Reading", "Hiking"], city: "Los Angeles", grade: "B+" },
+...   { name: "Henry", age: 19, gender: "Male", weight: 72, hobbies: ["Sports", "Writing"], city: "Chicago", grade: "A-" },
+...   { name: "Isabel", age: 20, gender: "Female", weight: 53, hobbies: ["Traveling", "Painting"], city: "San Francisco", grade: "A" },
+...   { name: "Jack", age: 21, gender: "Male", weight: 67, hobbies: ["Music", "Photography"], city: "Miami", grade: "B" },
+...   { name: "Kate", age: 22, gender: "Female", weight: 62, hobbies: ["Dancing", "Reading"], city: "New York", grade: "B+" },
+...   { name: "Luke", age: 19, gender: "Male", weight: 75, hobbies: ["Cooking", "Gaming"], city: "Los Angeles", grade: "A-" },
+...   { name: "Mia", age: 20, gender: "Female", weight: 56, hobbies: ["Swimming", "Drawing"], city: "Chicago", grade: "A" },
+...   { name: "Nick", age: 21, gender: "Male", weight: 70, hobbies: ["Hiking", "Sports"], city: "San Francisco", grade: "B" },
+...   { name: "Olivia", age: 22, gender: "Female", weight: 65, hobbies: ["Writing", "Music"], city: "Miami", grade: "B+" },
+...   { name: "Peter", age: 19, gender: "Male", weight: 68, hobbies: ["Photography", "Traveling"], city: "New York", grade: "A-" },
+...   { name: "Quinn", age: 20, gender: "Female", weight: 54, hobbies: ["Reading", "Painting"], city: "Los Angeles", grade: "A" },
+...   { name: "Ryan", age: 21, gender: "Male", weight: 69, hobbies: ["Cooking", "Gaming"], city: "Chicago", grade: "B" },
+...   { name: "Samantha", age: 22, gender: "Female", weight: 63, hobbies: ["Dancing", "Writing"], city: "San Francisco", grade: "B+" },
+...   { name: "Tom", age: 19, gender: "Male", weight: 73, hobbies: ["Music", "Swimming"], city: "Miami", grade: "A-" }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('663063e576f768a35946b799'),
+    '1': ObjectId('663063e576f768a35946b79a'),
+    '2': ObjectId('663063e576f768a35946b79b'),
+    '3': ObjectId('663063e576f768a35946b79c'),
+    '4': ObjectId('663063e576f768a35946b79d'),
+    '5': ObjectId('663063e576f768a35946b79e'),
+    '6': ObjectId('663063e576f768a35946b79f'),
+    '7': ObjectId('663063e576f768a35946b7a0'),
+    '8': ObjectId('663063e576f768a35946b7a1'),
+    '9': ObjectId('663063e576f768a35946b7a2'),
+    '10': ObjectId('663063e576f768a35946b7a3'),
+    '11': ObjectId('663063e576f768a35946b7a4'),
+    '12': ObjectId('663063e576f768a35946b7a5'),
+    '13': ObjectId('663063e576f768a35946b7a6'),
+    '14': ObjectId('663063e576f768a35946b7a7'),
+    '15': ObjectId('663063e576f768a35946b7a8'),
+    '16': ObjectId('663063e576f768a35946b7a9'),
+    '17': ObjectId('663063e576f768a35946b7aa'),
+    '18': ObjectId('663063e576f768a35946b7ab'),
+    '19': ObjectId('663063e576f768a35946b7ac')
+  }
+}
+school>
+
+school> db.students.find()
+[
+  {
+    _id: ObjectId('663063e576f768a35946b799'),
+    name: 'Alice',
+    age: 20,
+    gender: 'Female',
+    weight: 55,
+    hobbies: [ 'Reading', 'Painting' ],
+    city: 'New York',
+    grade: 'A'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b79a'),
+    name: 'Bob',
+    age: 21,
+    gender: 'Male',
+    weight: 65,
+    hobbies: [ 'Sports', 'Music' ],
+    city: 'Los Angeles',
+    grade: 'B'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b79b'),
+    name: 'Charlie',
+    age: 22,
+    gender: 'Male',
+    weight: 70,
+    hobbies: [ 'Cooking', 'Traveling' ],
+    city: 'Chicago',
+    grade: 'B+'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b79c'),
+    name: 'Diana',
+    age: 19,
+    gender: 'Female',
+    weight: 52,
+    hobbies: [ 'Drawing', 'Swimming' ],
+    city: 'San Francisco',
+    grade: 'A-'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b79d'),
+    name: 'Emily',
+    age: 20,
+    gender: 'Female',
+    weight: 58,
+    hobbies: [ 'Photography', 'Dancing' ],
+    city: 'Miami',
+    grade: 'A'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b79e'),
+    name: 'Frank',
+    age: 21,
+    gender: 'Male',
+    weight: 68,
+    hobbies: [ 'Gaming', 'Cooking' ],
+    city: 'New York',
+    grade: 'B'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b79f'),
+    name: 'Grace',
+    age: 22,
+    gender: 'Female',
+    weight: 60,
+    hobbies: [ 'Reading', 'Hiking' ],
+    city: 'Los Angeles',
+    grade: 'B+'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7a0'),
+    name: 'Henry',
+    age: 19,
+    gender: 'Male',
+    weight: 72,
+    hobbies: [ 'Sports', 'Writing' ],
+    city: 'Chicago',
+    grade: 'A-'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7a1'),
+    name: 'Isabel',
+    age: 20,
+    gender: 'Female',
+    weight: 53,
+    hobbies: [ 'Traveling', 'Painting' ],
+    city: 'San Francisco',
+    grade: 'A'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7a2'),
+    name: 'Jack',
+    age: 21,
+    gender: 'Male',
+    weight: 67,
+    hobbies: [ 'Music', 'Photography' ],
+    city: 'Miami',
+    grade: 'B'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7a3'),
+    name: 'Kate',
+    age: 22,
+    gender: 'Female',
+    weight: 62,
+    hobbies: [ 'Dancing', 'Reading' ],
+    city: 'New York',
+    grade: 'B+'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7a4'),
+    name: 'Luke',
+    age: 19,
+    gender: 'Male',
+    weight: 75,
+    hobbies: [ 'Cooking', 'Gaming' ],
+    city: 'Los Angeles',
+    grade: 'A-'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7a5'),
+    name: 'Mia',
+    age: 20,
+    gender: 'Female',
+    weight: 56,
+    hobbies: [ 'Swimming', 'Drawing' ],
+    city: 'Chicago',
+    grade: 'A'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7a6'),
+    name: 'Nick',
+    age: 21,
+    gender: 'Male',
+    weight: 70,
+    hobbies: [ 'Hiking', 'Sports' ],
+    city: 'San Francisco',
+    grade: 'B'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7a7'),
+    name: 'Olivia',
+    age: 22,
+    gender: 'Female',
+    weight: 65,
+    hobbies: [ 'Writing', 'Music' ],
+    city: 'Miami',
+    grade: 'B+'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7a8'),
+    name: 'Peter',
+    age: 19,
+    gender: 'Male',
+    weight: 68,
+    hobbies: [ 'Photography', 'Traveling' ],
+    city: 'New York',
+    grade: 'A-'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7a9'),
+    name: 'Quinn',
+    age: 20,
+    gender: 'Female',
+    weight: 54,
+    hobbies: [ 'Reading', 'Painting' ],
+    city: 'Los Angeles',
+    grade: 'A'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7aa'),
+    name: 'Ryan',
+    age: 21,
+    gender: 'Male',
+    weight: 69,
+    hobbies: [ 'Cooking', 'Gaming' ],
+    city: 'Chicago',
+    grade: 'B'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7ab'),
+    name: 'Samantha',
+    age: 22,
+    gender: 'Female',
+    weight: 63,
+    hobbies: [ 'Dancing', 'Writing' ],
+    city: 'San Francisco',
+    grade: 'B+'
+  },
+  {
+    _id: ObjectId('663063e576f768a35946b7ac'),
+    name: 'Tom',
+    age: 19,
+    gender: 'Male',
+    weight: 73,
+    hobbies: [ 'Music', 'Swimming' ],
+    city: 'Miami',
+    grade: 'A-'
+  }
+]
+Type "it" for more
+school> db.createCollection('teachers')
+{ ok: 1 }
+school> db.teachers.insertMany([
+...   { name: "Alice Smith", subject: "Mathematics", age: 35, years_of_experience: 10, gender: "Female", weight: 60, salary: 75000 },
+...   { name: "Bob Johnson", subject: "English", age: 40, years_of_experience: 15, gender: "Male", weight: 70, salary: 80000 },
+...   { name: "Catherine Brown", subject: "Science", age: 45, years_of_experience: 20, gender: "Female", weight: 65, salary: 85000 },
+...   { name: "David Lee", subject: "History", age: 38, years_of_experience: 12, gender: "Male", weight: 75, salary: 78000 },
+...   { name: "Emma Davis", subject: "Art", age: 33, years_of_experience: 8, gender: "Female", weight: 55, salary: 72000 },
+...   { name: "Frank Wilson", subject: "Physical Education", age: 42, years_of_experience: 17, gender: "Male", weight: 80, salary: 82000 },
+...   { name: "Grace Martinez", subject: "Music", age: 37, years_of_experience: 11, gender: "Female", weight: 62, salary: 76000 },
+...   { name: "Henry Anderson", subject: "Geography", age: 39, years_of_experience: 13, gender: "Male", weight: 78, salary: 79000 },
+...   { name: "Isabel Thompson", subject: "Computer Science", age: 36, years_of_experience: 9, gender: "Female", weight: 58, salary: 73000 },
+...   { name: "Jack Taylor", subject: "Foreign Language", age: 41, years_of_experience: 16, gender: "Male", weight: 73, salary: 81000 },
+...   { name: "Katherine Garcia", subject: "Economics", age: 34, years_of_experience: 7, gender: "Female", weight: 57, salary: 71000 },
+...   { name: "Luke Harris", subject: "Physical Education", age: 43, years_of_experience: 18, gender: "Male", weight: 77, salary: 83000 },
+...   { name: "Mia Martin", subject: "Biology", age: 32, years_of_experience: 6, gender: "Female", weight: 54, salary: 70000 },
+...   { name: "Nick White", subject: "Chemistry", age: 37, years_of_experience: 11, gender: "Male", weight: 72, salary: 77000 },
+...   { name: "Olivia Rodriguez", subject: "Psychology", age: 44, years_of_experience: 19, gender: "Female", weight: 64, salary: 84000 },
+...   { name: "Peter Clark", subject: "Physics", age: 35, years_of_experience: 10, gender: "Male", weight: 76, salary: 78000 },
+...   { name: "Quinn Lewis", subject: "Literature", age: 40, years_of_experience: 15, gender: "Female", weight: 59, salary: 75000 },
+...   { name: "Ryan King", subject: "Physical Education", age: 38, years_of_experience: 12, gender: "Male", weight: 79, salary: 80000 },
+...   { name: "Samantha Walker", subject: "Drama", age: 33, years_of_experience: 8, gender: "Female", weight: 61, salary: 74000 },
+...   { name: "Tom Scott", subject: "Political Science", age: 42, years_of_experience: 17, gender: "Male", weight: 74, salary: 81000 }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6630648776f768a35946b7ad'),
+    '1': ObjectId('6630648776f768a35946b7ae'),
+    '2': ObjectId('6630648776f768a35946b7af'),
+    '3': ObjectId('6630648776f768a35946b7b0'),
+    '4': ObjectId('6630648776f768a35946b7b1'),
+    '5': ObjectId('6630648776f768a35946b7b2'),
+    '6': ObjectId('6630648776f768a35946b7b3'),
+    '7': ObjectId('6630648776f768a35946b7b4'),
+    '8': ObjectId('6630648776f768a35946b7b5'),
+    '9': ObjectId('6630648776f768a35946b7b6'),
+    '10': ObjectId('6630648776f768a35946b7b7'),
+    '11': ObjectId('6630648776f768a35946b7b8'),
+    '12': ObjectId('6630648776f768a35946b7b9'),
+    '13': ObjectId('6630648776f768a35946b7ba'),
+    '14': ObjectId('6630648776f768a35946b7bb'),
+    '15': ObjectId('6630648776f768a35946b7bc'),
+    '16': ObjectId('6630648776f768a35946b7bd'),
+    '17': ObjectId('6630648776f768a35946b7be'),
+    '18': ObjectId('6630648776f768a35946b7bf'),
+    '19': ObjectId('6630648776f768a35946b7c0')
+  }
+}
+school>
+
+school> db collections
+Uncaught:
+SyntaxError: Missing semicolon. (1:2)
+
+> 1 | db collections
+    |   ^
+  2 |
+
+school> db collections()
+Uncaught:
+SyntaxError: Missing semicolon. (1:2)
+
+> 1 | db collections()
+    |   ^
+  2 |
+
+school> show collections
+students
+teachers
+school> db.teachers.aggregate([{$match:{gender:'Male'}}])
+[
+  {
+    _id: ObjectId('6630648776f768a35946b7ae'),
+    name: 'Bob Johnson',
+    subject: 'English',
+    age: 40,
+    years_of_experience: 15,
+    gender: 'Male',
+    weight: 70,
+    salary: 80000
+  },
+  {
+    _id: ObjectId('6630648776f768a35946b7b0'),
+    name: 'David Lee',
+    subject: 'History',
+    age: 38,
+    years_of_experience: 12,
+    gender: 'Male',
+    weight: 75,
+    salary: 78000
+  },
+  {
+    _id: ObjectId('6630648776f768a35946b7b2'),
+    name: 'Frank Wilson',
+    subject: 'Physical Education',
+    age: 42,
+    years_of_experience: 17,
+    gender: 'Male',
+    weight: 80,
+    salary: 82000
+  },
+  {
+    _id: ObjectId('6630648776f768a35946b7b4'),
+    name: 'Henry Anderson',
+    subject: 'Geography',
+    age: 39,
+    years_of_experience: 13,
+    gender: 'Male',
+    weight: 78,
+    salary: 79000
+  },
+  {
+    _id: ObjectId('6630648776f768a35946b7b6'),
+    name: 'Jack Taylor',
+    subject: 'Foreign Language',
+    age: 41,
+    years_of_experience: 16,
+    gender: 'Male',
+    weight: 73,
+    salary: 81000
+  },
+  {
+    _id: ObjectId('6630648776f768a35946b7b8'),
+    name: 'Luke Harris',
+    subject: 'Physical Education',
+    age: 43,
+    years_of_experience: 18,
+    gender: 'Male',
+    weight: 77,
+    salary: 83000
+  },
+  {
+    _id: ObjectId('6630648776f768a35946b7ba'),
+    name: 'Nick White',
+    subject: 'Chemistry',
+    age: 37,
+    years_of_experience: 11,
+    gender: 'Male',
+    weight: 72,
+    salary: 77000
+  },
+  {
+    _id: ObjectId('6630648776f768a35946b7bc'),
+    name: 'Peter Clark',
+    subject: 'Physics',
+    age: 35,
+    years_of_experience: 10,
+    gender: 'Male',
+    weight: 76,
+    salary: 78000
+  },
+  {
+    _id: ObjectId('6630648776f768a35946b7be'),
+    name: 'Ryan King',
+    subject: 'Physical Education',
+    age: 38,
+    years_of_experience: 12,
+    gender: 'Male',
+    weight: 79,
+    salary: 80000
+  },
+  {
+    _id: ObjectId('6630648776f768a35946b7c0'),
+    name: 'Tom Scott',
+    subject: 'Political Science',
+    age: 42,
+    years_of_experience: 17,
+    gender: 'Male',
+    weight: 74,
+    salary: 81000
+  }
+]
+school> db.teachers.aggregate([{$group:{_id:"$age"}}])
+[
+  { _id: 33 }, { _id: 40 },
+  { _id: 42 }, { _id: 45 },
+  { _id: 39 }, { _id: 32 },
+  { _id: 35 }, { _id: 38 },
+  { _id: 43 }, { _id: 36 },
+  { _id: 34 }, { _id: 37 },
+  { _id: 44 }, { _id: 41 }
+]
+school> db.teachers.aggregate([{$group:{_id:"$age",names:{$push:"$names"}}}])
+[
+  { _id: 42, names: [] },
+  { _id: 45, names: [] },
+  { _id: 40, names: [] },
+  { _id: 39, names: [] },
+  { _id: 32, names: [] },
+  { _id: 44, names: [] },
+  { _id: 38, names: [] },
+  { _id: 35, names: [] },
+  { _id: 36, names: [] },
+  { _id: 43, names: [] },
+  { _id: 37, names: [] },
+  { _id: 34, names: [] },
+  { _id: 41, names: [] },
+  { _id: 33, names: [] }
+]
+school> db.teachers.aggregate([{$group:{_id:"$age",names:{$push:"$name"}}}])
+
+[
+  { _id: 42, names: [ 'Frank Wilson', 'Tom Scott' ] },
+  { _id: 40, names: [ 'Bob Johnson', 'Quinn Lewis' ] },
+  { _id: 45, names: [ 'Catherine Brown' ] },
+  { _id: 39, names: [ 'Henry Anderson' ] },
+  { _id: 32, names: [ 'Mia Martin' ] },
+  { _id: 44, names: [ 'Olivia Rodriguez' ] },
+  { _id: 38, names: [ 'David Lee', 'Ryan King' ] },
+  { _id: 35, names: [ 'Alice Smith', 'Peter Clark' ] },
+  { _id: 36, names: [ 'Isabel Thompson' ] },
+  { _id: 43, names: [ 'Luke Harris' ] },
+  { _id: 37, names: [ 'Grace Martinez', 'Nick White' ] },
+  { _id: 34, names: [ 'Katherine Garcia' ] },
+  { _id: 41, names: [ 'Jack Taylor' ] },
+  { _id: 33, names: [ 'Emma Davis', 'Samantha Walker' ] }
+]
+school> db.teachers.aggregate([{$group:{_id:"$age",doc:{$push:"$$ROOT"}}}])
+[
+  {
+    _id: 44,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7bb'),
+        name: 'Olivia Rodriguez',
+        subject: 'Psychology',
+        age: 44,
+        years_of_experience: 19,
+        gender: 'Female',
+        weight: 64,
+        salary: 84000
+      }
+    ]
+  },
+  {
+    _id: 42,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7b2'),
+        name: 'Frank Wilson',
+        subject: 'Physical Education',
+        age: 42,
+        years_of_experience: 17,
+        gender: 'Male',
+        weight: 80,
+        salary: 82000
+      },
+      {
+        _id: ObjectId('6630648776f768a35946b7c0'),
+        name: 'Tom Scott',
+        subject: 'Political Science',
+        age: 42,
+        years_of_experience: 17,
+        gender: 'Male',
+        weight: 74,
+        salary: 81000
+      }
+    ]
+  },
+  {
+    _id: 45,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7af'),
+        name: 'Catherine Brown',
+        subject: 'Science',
+        age: 45,
+        years_of_experience: 20,
+        gender: 'Female',
+        weight: 65,
+        salary: 85000
+      }
+    ]
+  },
+  {
+    _id: 38,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7b0'),
+        name: 'David Lee',
+        subject: 'History',
+        age: 38,
+        years_of_experience: 12,
+        gender: 'Male',
+        weight: 75,
+        salary: 78000
+      },
+      {
+        _id: ObjectId('6630648776f768a35946b7be'),
+        name: 'Ryan King',
+        subject: 'Physical Education',
+        age: 38,
+        years_of_experience: 12,
+        gender: 'Male',
+        weight: 79,
+        salary: 80000
+      }
+    ]
+  },
+  {
+    _id: 35,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7ad'),
+        name: 'Alice Smith',
+        subject: 'Mathematics',
+        age: 35,
+        years_of_experience: 10,
+        gender: 'Female',
+        weight: 60,
+        salary: 75000
+      },
+      {
+        _id: ObjectId('6630648776f768a35946b7bc'),
+        name: 'Peter Clark',
+        subject: 'Physics',
+        age: 35,
+        years_of_experience: 10,
+        gender: 'Male',
+        weight: 76,
+        salary: 78000
+      }
+    ]
+  },
+  {
+    _id: 40,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7ae'),
+        name: 'Bob Johnson',
+        subject: 'English',
+        age: 40,
+        years_of_experience: 15,
+        gender: 'Male',
+        weight: 70,
+        salary: 80000
+      },
+      {
+        _id: ObjectId('6630648776f768a35946b7bd'),
+        name: 'Quinn Lewis',
+        subject: 'Literature',
+        age: 40,
+        years_of_experience: 15,
+        gender: 'Female',
+        weight: 59,
+        salary: 75000
+      }
+    ]
+  },
+  {
+    _id: 32,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7b9'),
+        name: 'Mia Martin',
+        subject: 'Biology',
+        age: 32,
+        years_of_experience: 6,
+        gender: 'Female',
+        weight: 54,
+        salary: 70000
+      }
+    ]
+  },
+  {
+    _id: 37,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7b3'),
+        name: 'Grace Martinez',
+        subject: 'Music',
+        age: 37,
+        years_of_experience: 11,
+        gender: 'Female',
+        weight: 62,
+        salary: 76000
+      },
+      {
+        _id: ObjectId('6630648776f768a35946b7ba'),
+        name: 'Nick White',
+        subject: 'Chemistry',
+        age: 37,
+        years_of_experience: 11,
+        gender: 'Male',
+        weight: 72,
+        salary: 77000
+      }
+    ]
+  },
+  {
+    _id: 34,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7b7'),
+        name: 'Katherine Garcia',
+        subject: 'Economics',
+        age: 34,
+        years_of_experience: 7,
+        gender: 'Female',
+        weight: 57,
+        salary: 71000
+      }
+    ]
+  },
+  {
+    _id: 36,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7b5'),
+        name: 'Isabel Thompson',
+        subject: 'Computer Science',
+        age: 36,
+        years_of_experience: 9,
+        gender: 'Female',
+        weight: 58,
+        salary: 73000
+      }
+    ]
+  },
+  {
+    _id: 43,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7b8'),
+        name: 'Luke Harris',
+        subject: 'Physical Education',
+        age: 43,
+        years_of_experience: 18,
+        gender: 'Male',
+        weight: 77,
+        salary: 83000
+      }
+    ]
+  },
+  {
+    _id: 33,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7b1'),
+        name: 'Emma Davis',
+        subject: 'Art',
+        age: 33,
+        years_of_experience: 8,
+        gender: 'Female',
+        weight: 55,
+        salary: 72000
+      },
+      {
+        _id: ObjectId('6630648776f768a35946b7bf'),
+        name: 'Samantha Walker',
+        subject: 'Drama',
+        age: 33,
+        years_of_experience: 8,
+        gender: 'Female',
+        weight: 61,
+        salary: 74000
+      }
+    ]
+  },
+  {
+    _id: 39,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7b4'),
+        name: 'Henry Anderson',
+        subject: 'Geography',
+        age: 39,
+        years_of_experience: 13,
+        gender: 'Male',
+        weight: 78,
+        salary: 79000
+      }
+    ]
+  },
+  {
+    _id: 41,
+    doc: [
+      {
+        _id: ObjectId('6630648776f768a35946b7b6'),
+        name: 'Jack Taylor',
+        subject: 'Foreign Language',
+        age: 41,
+        years_of_experience: 16,
+        gender: 'Male',
+        weight: 73,
+        salary: 81000
+      }
+    ]
+  }
+]
+school> db.teachers.aggregate([{$match:{gender:'Male'}},{$group:{_id:'$age', countOfTeachersInThisAgeGroup:{$sum:1}}}])
+[
+  { _id: 40, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 42, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 38, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 35, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 37, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 43, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 39, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 41, countOfTeachersInThisAgeGroup: 1 }
+]
+school> db.teachers.aggregate([{$match:{gender:'Male'}},{$group:{_id:'$age', countOfTeachersInThisAgeGroup:{$sum:1}},$push:"$$ROOT"}])
+MongoServerError[Location40323]: A pipeline stage specification object must contain exactly one field.
+school> db.teachers.aggregate([{$match:{gender:'Male'}},{$group:{_id:'$age', countOfTeachersInThisAgeGroup:{$sum:1}},doc:{$push:"$$ROOT"}}])
+MongoServerError[Location40323]: A pipeline stage specification object must contain exactly one field.
+school> db.teachers.aggregate([{$match:{gender:'Male'}},{$group:{_id:'$age', countOfTeachersInThisAgeGroup:{$sum:1}}}])
+[
+  { _id: 40, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 42, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 38, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 35, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 43, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 37, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 41, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 39, countOfTeachersInThisAgeGroup: 1 }
+]
+school> db.teachers.aggregate([{$match:{gender:'Male'}},{$group:{_id:'$age', countOfTeachersInThisAgeGroup:{$sum:2}}}])
+[
+  { _id: 39, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 40, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 42, countOfTeachersInThisAgeGroup: 4 },
+  { _id: 35, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 38, countOfTeachersInThisAgeGroup: 4 },
+  { _id: 43, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 37, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 41, countOfTeachersInThisAgeGroup: 2 }
+]
+school> db.teachers.aggregate([{$match:{gender:'Male'}},{$group:{_id:'$age', countOfTeachersInThisAgeGroup:{$sum:1}}}])
+[
+  { _id: 42, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 40, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 38, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 35, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 43, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 37, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 41, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 39, countOfTeachersInThisAgeGroup: 1 }
+]
+school> db.teachers.aggregate([{$match:{gender:'Male'}},{$group:{_id:'$age', countOfTeachersInThisAgeGroup:{$sum:1}}},{$sort:{numberOfTechers:-1}}])
+[
+  { _id: 40, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 42, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 38, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 35, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 37, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 43, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 39, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 41, countOfTeachersInThisAgeGroup: 1 }
+]
+school> db.teachers.aggregate([{$match:{gender:'Male'}},{$group:{_id:'$age', countOfTeachersInThisAgeGroup:{$sum:1}}},{$sort:{countOfTeachersInThisAgeGroup:-1}}])
+[
+  { _id: 42, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 38, countOfTeachersInThisAgeGroup: 2 },
+  { _id: 39, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 40, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 35, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 43, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 37, countOfTeachersInThisAgeGroup: 1 },
+  { _id: 41, countOfTeachersInThisAgeGroup: 1 }
+]
+school>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+school>

@@ -1,0 +1,14 @@
+1. `show dbs`: Lists all databases on the MongoDB server.
+2. `use college`: Switches to the `college` database.
+3. `db.college.insertOne({...})`: Inserts a document into the `college` collection.
+4. `show dbs`: Lists all databases again.
+5. `db.college.find()`: Finds all documents in the `college` collection.
+6. `show collections`: Lists all collections in the current database.
+7. `db.college.renameCollection("students")`: Renames the `college` collection to `students`.
+8. `show collections`: Lists all collections again.
+9. `db.students.find()`: Finds all documents in the `students` collection.
+10. `show dbs`: Lists all databases again.
+11. `db.dropDatabase()`: Drops the current database (`college`).
+12. `show dbs`: Lists all databases again.
+
+These commands demonstrate various MongoDB operations such as database selection, document insertion, collection renaming, and database dropping. Let me know if you need further explanation on any specific command!

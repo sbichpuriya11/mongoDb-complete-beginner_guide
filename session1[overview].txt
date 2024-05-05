@@ -1,0 +1,123 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb://localhost:27017
+mongodb://localhost:27017
+Current Mongosh Log ID: 662bf02916c86bf2d246b798
+Connecting to:          mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.5
+Using MongoDB:          7.0.8
+Using Mongosh:          2.2.5
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-04-26T21:28:02.521+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin   40.00 KiB
+config  60.00 KiB
+local   72.00 KiB
+test> use session1_db
+switched to db session1_db
+session1_db> db.students
+session1_db.students
+session1_db> db.students.insertOne({name:"Emily",age:28})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf14416c86bf2d246b799')
+}
+session1_db> db.students.insertOne({name:"Liam",age:35})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf14f16c86bf2d246b79a')
+}
+session1_db> db.students.insertOne({name:"Sophia",age:42})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf15816c86bf2d246b79b')
+}
+session1_db> db.students.insertOne({name:"Noah",age:19})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf16116c86bf2d246b79c')
+}
+session1_db> db.students.insertOne({name:"Olivia",age:30})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf16c16c86bf2d246b79d')
+}
+session1_db> db.students.insertOne({name:"Ethan",age:25})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf17816c86bf2d246b79e')
+}
+session1_db> db.students.insertOne({name:"Isabella",age:36})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf18216c86bf2d246b79f')
+}
+session1_db> db.students.insertOne({name:"Mason",age:21})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf18a16c86bf2d246b7a0')
+}
+session1_db> db.students.insertOne({name:"Ava",age:29})
+\{
+  acknowledged: true,
+  insertedId: ObjectId('662bf19216c86bf2d246b7a1')
+}
+session1_db> db.students.insertOne({name:"Logan",age:33})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf19a16c86bf2d246b7a2')
+}
+session1_db> db.students.insertOne({name:"Mia",age:27})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf1a316c86bf2d246b7a3')
+}
+session1_db> db.students.insertOne({name:"Jacob",age:40})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf1b716c86bf2d246b7a4')
+}
+session1_db> db.students.insertOne({name:"Harper",age:24})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf1c116c86bf2d246b7a5')
+}
+session1_db> db.students.insertOne({name:"William",age:31})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf1cb16c86bf2d246b7a6')
+}
+session1_db> db.students.insertOne({name:"Charlotte",age:38})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf1d416c86bf2d246b7a7')
+}
+session1_db> db.students.insertOne({name:"Michael",age:45})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf1e216c86bf2d246b7a8')
+}
+session1_db> db.students.insertOne({name:"Amelia",age:22})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf1ed16c86bf2d246b7a9')
+}
+session1_db> db.students.insertOne({name:"Benjamin",age:34})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf1f516c86bf2d246b7aa')
+}
+session1_db> db.students.insertOne({name:"Evelyn",age:26})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf1ff16c86bf2d246b7ab')
+}
+session1_db> db.students.insertOne({name:"Alexander",age:32})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662bf20b16c86bf2d246b7ac')
+}
+session1_db> db.students.find()

@@ -1,0 +1,444 @@
+ecommerece> show dbs
+admin         40.00 KiB
+config       108.00 KiB
+ecommerece    40.00 KiB
+hooks         48.00 KiB
+local         72.00 KiB
+mydb         112.00 KiB
+products      72.00 KiB
+school        92.00 KiB
+session1_db  112.00 KiB
+ecommerece> use school
+switched to db school
+school> db.students.updateMany({},{$inc:{age:2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 23,
+  modifiedCount: 23,
+  upsertedCount: 0
+}
+school> db.students.updateMany({},{$inc:{age:-2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 23,
+  modifiedCount: 23,
+  upsertedCount: 0
+}
+school> db.students.updateMany({name:"Aarush Sharma"},{$inc:{age:-2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.updateMany({name:"Aarush Sharma"},{$inc:{age:2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.find()
+[
+  {
+    _id: ObjectId('662c0595bc4e4460df46b79a'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059bbc4e4460df46b79b'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059fbc4e4460df46b79c'),
+    name: 'Ishita Sharma',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a4bc4e4460df46b79d'),
+    name: 'Advik Singh',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a8bc4e4460df46b79e'),
+    name: 'Diya Shah',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05aebc4e4460df46b79f'),
+    name: 'Arjun Gupta',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b0bc4e4460df46b7a0'),
+    name: 'Ananya Reddy',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b7bc4e4460df46b7a1'),
+    name: 'Vihaan Kumar',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bbbc4e4460df46b7a2'),
+    name: 'Zoya Khan',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bebc4e4460df46b7a3'),
+    name: 'Ayaan Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c2bc4e4460df46b7a4'),
+    name: 'Saanvi Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c7bc4e4460df46b7a5'),
+    name: 'Kabir Singh',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ccbc4e4460df46b7a6'),
+    name: 'Aisha Gupta',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d3bc4e4460df46b7a7'),
+    name: 'Rehan Kapoor',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: false },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d7bc4e4460df46b7a8'),
+    name: 'Anika Reddy',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05dabc4e4460df46b7a9'),
+    name: 'Dhruv Kumar',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ddbc4e4460df46b7aa'),
+    name: 'Nitya Shah',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e2bc4e4460df46b7ab'),
+    name: 'Yuvraj Singh',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: true },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e4bc4e4460df46b7ac'),
+    name: 'Tanisha Patel',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+    name: 'Aarush Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  }
+]
+Type "it" for more
+school> db.students.updateMany({name:"Aarush Sharma"},{$max:{age:2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+school> db.students.find()
+[
+  {
+    _id: ObjectId('662c0595bc4e4460df46b79a'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059bbc4e4460df46b79b'),
+    name: 'Aarav Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c059fbc4e4460df46b79c'),
+    name: 'Ishita Sharma',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a4bc4e4460df46b79d'),
+    name: 'Advik Singh',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05a8bc4e4460df46b79e'),
+    name: 'Diya Shah',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05aebc4e4460df46b79f'),
+    name: 'Arjun Gupta',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b0bc4e4460df46b7a0'),
+    name: 'Ananya Reddy',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05b7bc4e4460df46b7a1'),
+    name: 'Vihaan Kumar',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bbbc4e4460df46b7a2'),
+    name: 'Zoya Khan',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05bebc4e4460df46b7a3'),
+    name: 'Ayaan Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c2bc4e4460df46b7a4'),
+    name: 'Saanvi Patel',
+    age: 12,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05c7bc4e4460df46b7a5'),
+    name: 'Kabir Singh',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ccbc4e4460df46b7a6'),
+    name: 'Aisha Gupta',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d3bc4e4460df46b7a7'),
+    name: 'Rehan Kapoor',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: false },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05d7bc4e4460df46b7a8'),
+    name: 'Anika Reddy',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05dabc4e4460df46b7a9'),
+    name: 'Dhruv Kumar',
+    age: 13,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05ddbc4e4460df46b7aa'),
+    name: 'Nitya Shah',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e2bc4e4460df46b7ab'),
+    name: 'Yuvraj Singh',
+    age: 12,
+    idCards: { hasAadhar: true, hasPanCard: true },
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e4bc4e4460df46b7ac'),
+    name: 'Tanisha Patel',
+    age: 10,
+    hobbies: [ 'Anime', 'Cooking' ]
+  },
+  {
+    _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+    name: 'Aarush Sharma',
+    age: 11,
+    hobbies: [ 'Anime', 'Cooking' ]
+  }
+]
+Type "it" for more
+school> db.students.updateMany({name:"Aarush Sharma"},{$min:{age:2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.updateMany({name:"Aarush Sharma"},{$min:{age:23}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+school> db.students.updateMany({name:"Aarush Sharma"},{$max:{age:23}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> // $max, $min only works if existing value is less/greater than new value
+
+school> db.students.findOne({name:"Aarush Sharma"})
+{
+  _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+  name: 'Aarush Sharma',
+  age: 23,
+  hobbies: [ 'Anime', 'Cooking' ]
+}
+school> db.students.updateMany({name:"Aarush Sharma"},{$mul:{age:2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.findOne({name:"Aarush Sharma"})
+{
+  _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+  name: 'Aarush Sharma',
+  age: 46,
+  hobbies: [ 'Anime', 'Cooking' ]
+}
+school> db.students.updateMany({name:"Aarush Sharma"},{$unset:{age:23}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.findOne({name:"Aarush Sharma"})
+{
+  _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+  name: 'Aarush Sharma',
+  hobbies: [ 'Anime', 'Cooking' ]
+}
+school> db.students.updateMany({name:"Aarush Sharma"},{$set:{age:23}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.updateMany({name:"Aarush Sharma"},{$rename:{age:23}})
+MongoServerError: The 'to' field for $rename must be a string: age: 23
+school> db.students.updateMany({name:"Aarush Sharma"},{$rename:{age:'student_age'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.findOne({name:"Aarush Sharma"})
+{
+  _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+  name: 'Aarush Sharma',
+  hobbies: [ 'Anime', 'Cooking' ],
+  student_age: 23
+}
+school> db.students.updateMany({},{$rename:{age:'student_age'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 23,
+  modifiedCount: 22,
+  upsertedCount: 0
+}
+school> db.students.findOne({name:"Aarush Sharma"})
+{
+  _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+  name: 'Aarush Sharma',
+  hobbies: [ 'Anime', 'Cooking' ],
+  student_age: 23
+}
+school> db.students.updateMany({},{$rename:{student_age:'age'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 23,
+  modifiedCount: 23,
+  upsertedCount: 0
+}
+school> db.students.findOne({name:"Aarush Sharma"})
+{
+  _id: ObjectId('662c05e7bc4e4460df46b7ad'),
+  name: 'Aarush Sharma',
+  hobbies: [ 'Anime', 'Cooking' ],
+  age: 23
+}
+school> db.students.updateOne({name:"Golu Sharma"},{$set:{age:47}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+school> db.students.updateOne({name:"Golu Sharma"},{$set:{age:47}},{upsert:true})
+{
+  acknowledged: true,
+  insertedId: ObjectId('662f07cab481d9202e570160'),
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 1
+}
+school> db.students.findOne({name:"Golu Sharma"})
+{
+  _id: ObjectId('662f07cab481d9202e570160'),
+  name: 'Golu Sharma',
+  age: 47
+}
+school>

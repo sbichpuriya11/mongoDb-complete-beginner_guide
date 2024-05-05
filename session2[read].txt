@@ -1,0 +1,19 @@
+1. `db.students.find()`: Finds all documents in the `students` collection.
+2. `db.students.find({age:28})`: Finds documents in the `students` collection where the `age` field is equal to 28.
+3. `db.students.findOne({age:28})`: Finds the first document in the `students` collection where the `age` field is equal to 28.
+4. `it`: Refers to the last cursor returned by a MongoDB operation. In this case, it's used after `findOne`.
+5. `db.students.find().count()`: Counts the total number of documents in the `students` collection.
+6. `db.students.find().forEach((x)=>{})`: Iterates over each document in the `students` collection without performing any action.
+7. `db.students.find().forEach((x)=>{printjson(x)})`: Prints each document in the `students` collection as JSON.
+8. `db.students.find().limit(2)`: Limits the result to the first 2 documents in the `students` collection.
+9. `db.students.find({age:{$lt:25}})`: Finds documents where the `age` field is less than 25.
+10. `db.students.find({age:{$lte:25}})`: Finds documents where the `age` field is less than or equal to 25.
+11. `db.students.find({age:{$gte:25}})`: Finds documents where the `age` field is greater than or equal to 25.
+12. `db.students.find({age:{$gte:15,$lte:25}})`: Finds documents where the `age` field is between 15 and 25.
+13. `db.students.find({age:{gte:15,lte:25}})`: Incorrect syntax for specifying range queries.
+14. `db.students.find({_id:'662bf19a16c86bf2d246b7a2'})`: Finds documents by `_id`.
+15. `db.students.find({_id:ObjectId('662bf19a16c86bf2d246b7a2')})`: Finds documents by `_id` using `ObjectId`.
+16. `db.students.find({_id:662bf19a16c86bf2d246b7a2})`: Incorrect syntax for specifying `_id`.
+17. `db.students.find({_id:'662bf19a16c86bf2d246b7a2'})`: Finds documents by `_id`.
+
+These commands demonstrate various queries and operations on the `students` collection in the `session1_db` database. Let me know if you need further explanation on any specific command!
