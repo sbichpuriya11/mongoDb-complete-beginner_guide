@@ -1,47 +1,10 @@
-session1_db> show dbs
-admin         40.00 KiB
-config       108.00 KiB
-local         72.00 KiB
-session1_db   72.00 KiB
-session1_db> use school
-switched to db school
-school> show dbs
-admin         40.00 KiB
-config       108.00 KiB
-local         72.00 KiB
-session1_db   72.00 KiB
-school> show collections
+1. **Show Databases**: Displayed the list of databases available on the MongoDB server.
+2. **Use school**: Switched to the "school" database.
+3. **Show Databases**: Displayed the list of databases again to confirm the current database.
+4. **Show Collections**: Displayed the list of collections in the "school" database. It appears there are no collections currently.
+5. **Insert Documents**: Inserted documents into the "students" collection using the insert() method. This method is deprecated.
+6. **InsertOne**: Inserted a single document into the "students" collection using the insertOne() method.
+7. **InsertMany**: Inserted multiple documents into the "students" collection using the insertMany() method.
+8. **Find**: Retrieved all documents from the "students" collection using the find() method.
 
-school> db.students.insert({name:"Ram", "age":12}) //keys can be wrote inside "" or without ""
-DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
-{
-  acknowledged: true,
-  insertedIds: { '0': ObjectId('662bfe0a16c86bf2d246b7ad') }
-}
-school> db.students.find()
-[ { _id: ObjectId('662bfe0a16c86bf2d246b7ad'), name: 'Ram', age: 12 } ]
-school> db.students.insertOne({name:"Ankit",age:13})
-{
-  acknowledged: true,
-  insertedId: ObjectId('662bfe6616c86bf2d246b7ae')
-}
-school> db.students.insertMany([{name:"Vijay",age:23},{name:"Nitin", age:34},{'name':'Sagar',age:24},{"name":"Tanu",'age':21}])
-{
-  acknowledged: true,
-  insertedIds: {
-    '0': ObjectId('662bfee116c86bf2d246b7af'),
-    '1': ObjectId('662bfee116c86bf2d246b7b0'),
-    '2': ObjectId('662bfee116c86bf2d246b7b1'),
-    '3': ObjectId('662bfee116c86bf2d246b7b2')
-  }
-}
-school> db.students.find()
-[
-  { _id: ObjectId('662bfe0a16c86bf2d246b7ad'), name: 'Ram', age: 12 },
-  { _id: ObjectId('662bfe6616c86bf2d246b7ae'), name: 'Ankit', age: 13 },
-  { _id: ObjectId('662bfee116c86bf2d246b7af'), name: 'Vijay', age: 23 },
-  { _id: ObjectId('662bfee116c86bf2d246b7b0'), name: 'Nitin', age: 34 },
-  { _id: ObjectId('662bfee116c86bf2d246b7b1'), name: 'Sagar', age: 24 },
-  { _id: ObjectId('662bfee116c86bf2d246b7b2'), name: 'Tanu', age: 21 }
-]
-school>
+These commands demonstrate database manipulation, including switching databases, inserting documents into a collection, and querying documents from the collection.
